@@ -16,8 +16,10 @@ import Lesson3Simulation from './components/Lesson3Simulation';
 import Lesson4Simulation from './components/Lesson4Simulation';
 import Lesson5Simulation from './components/Lesson5Simulation';
 import Lesson6Simulation from './components/Lesson6Simulation';
-import { lessons, lesson1DoNow, lesson2DoNow, lesson3DoNow, lesson4DoNow, lesson5DoNow, lesson6DoNow, lessonThemes } from './constants';
-import { Activity, Brain, Clock, Heart, Baby, Users, Target, Eye, EyeOff, Scale, Dna, BookOpen, Bird, FlaskConical, AlertTriangle, Lightbulb } from 'lucide-react';
+import Lesson7Simulation from './components/Lesson7Simulation';
+import Lesson8Simulation from './components/Lesson8Simulation';
+import { lessons, lesson1DoNow, lesson2DoNow, lesson3DoNow, lesson4DoNow, lesson5DoNow, lesson6DoNow, lesson7DoNow, lesson8DoNow, lessonThemes } from './constants';
+import { Activity, Brain, Clock, Heart, Baby, Users, Target, Eye, EyeOff, Scale, Dna, BookOpen, Bird, FlaskConical, AlertTriangle, Lightbulb, Globe2, Shield, Home } from 'lucide-react';
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,6 +32,8 @@ export default function App() {
   const [showEssayPlan4, setShowEssayPlan4] = useState(false);
   const [showEssayPlan5, setShowEssayPlan5] = useState(false);
   const [showEssayPlan6, setShowEssayPlan6] = useState(false);
+  const [showEssayPlan7, setShowEssayPlan7] = useState(false);
+  const [showEssayPlan8, setShowEssayPlan8] = useState(false);
 
   const getSlideCount = (_lessonId: number) => {
     return 10; // Standard 10-slide lesson
@@ -2882,6 +2886,708 @@ export default function App() {
                     </ul>
                   </div>
                 </div>
+                  </>
+                )}
+              </div>
+            </Slide>
+          );
+      }
+    }
+
+    // Lesson 7: Cultural Variations & Maternal Deprivation
+    if (currentLesson === 7) {
+      switch (currentSlide) {
+        case 0:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <div className="flex flex-col items-center justify-center h-full text-center">
+                <div className="relative mb-8">
+                  <div className="absolute inset-0 bg-purple-500 blur-[110px] opacity-20 rounded-full animate-pulse-purple"></div>
+                  <div className="relative z-10 flex gap-4 items-center">
+                    <Globe2 size={isPresentation ? 110 : 90} className="text-purple-300" />
+                    <AlertTriangle size={isPresentation ? 88 : 72} className="text-yellow-300 animate-heartbeat" />
+                  </div>
+                </div>
+                <h1 className={`font-bold text-white mb-4 tracking-tight ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
+                  Cultural Variations <span className="text-purple-300">& Maternal Deprivation</span>
+                </h1>
+                <h2 className="text-purple-400 text-sm tracking-[0.4em] uppercase mb-10 font-bold">
+                  Attachment Lesson 07
+                </h2>
+                <button
+                  onClick={nextSlide}
+                  className={`group relative bg-slate-900 border-2 border-purple-500 text-purple-200 font-bold px-12 py-4 rounded-xl hover:bg-purple-900/30 transition-all ${isPresentation ? 'text-2xl' : 'text-lg'} shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40`}
+                >
+                  <span className="relative z-10">Start Lesson</span>
+                  <div className="absolute inset-0 bg-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </button>
+              </div>
+            </Slide>
+          );
+
+        case 1:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 1: Activation"
+                title="Do Now Quiz"
+                icon={Activity}
+                time="5 MINS"
+                isPresentation={isPresentation}
+              />
+              <DoNowQuiz questions={lesson7DoNow} isPresentation={isPresentation} />
+            </Slide>
+          );
+
+        case 2:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 2: Objectives"
+                title="Learning Goals"
+                icon={Target}
+                time="4 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 md:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-purple-500 shadow-xl p-5">
+                  <p className="text-purple-300 font-bold mb-2">AO1 Describe</p>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Define cultural variation and imposed etic</li>
+                    <li>• Summarise van IJzendoorn & Kroonenberg findings</li>
+                    <li>• Outline Bowlby\'s maternal deprivation hypothesis</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-blue-500 shadow-xl p-5">
+                  <p className="text-blue-300 font-bold mb-2">AO2 Apply</p>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Interpret cross-cultural Strange Situation data</li>
+                    <li>• Link deprivation theory to real scenarios</li>
+                    <li>• Distinguish deprivation vs privation</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
+                  <p className="text-green-300 font-bold mb-2">AO3 Evaluate</p>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Imposed etic and within-culture variation</li>
+                    <li>• Flawed evidence in 44 thieves/Goldfarb</li>
+                    <li>• Critical vs sensitive period debate</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 3:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 2: Concept"
+                title="van IJzendoorn & Kroonenberg"
+                icon={Globe2}
+                time="8 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border border-purple-500/40 shadow-lg p-5 flex flex-col">
+                  <h3 className="text-purple-300 font-bold mb-3">Meta-analysis Overview</h3>
+                  <ul className="text-gray-300 text-sm space-y-2 flex-grow">
+                    <li>• 32 Strange Situation studies across 8 countries</li>
+                    <li>• N = 1,990 infants</li>
+                    <li>• Secure attachment most common everywhere</li>
+                    <li>• Britain ~75% secure; China ~50% secure</li>
+                  </ul>
+                  <div className="mt-3 text-purple-200 text-sm">Within-country variation 150% greater than between-country</div>
+                </div>
+                <div className="bg-gray-800 rounded-xl border border-blue-500/40 shadow-lg p-5">
+                  <h3 className="text-blue-300 font-bold mb-3">Key Patterns</h3>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Individualist: low resistant (under 14%)</li>
+                    <li>• Collectivist (Japan/Israel/China): higher resistant (25%+), lower avoidant</li>
+                    <li>• Imposed etic risk: procedure may over-label distress in proximity cultures</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border border-green-500/40 shadow-lg p-5">
+                  <h3 className="text-green-300 font-bold mb-3">Conclusion</h3>
+                  <p className="text-gray-300 text-sm mb-2">Secure is the universal norm → supports innate attachment.</p>
+                  <p className="text-gray-300 text-sm">Cultural practices shape proportions → need cultural sensitivity when interpreting Strange Situation.</p>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 4:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 2: Concept"
+                title="Other Studies & Implications"
+                icon={BookOpen}
+                time="6 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border border-purple-500/40 shadow-lg p-5">
+                  <h4 className="text-purple-300 font-bold mb-2">Italy: Simonelli et al. (2014)</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• 76 infants (12 months) using Strange Situation</li>
+                    <li>• 50% secure, 36% avoidant</li>
+                    <li>• Linked to working mothers & professional childcare</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border border-blue-500/40 shadow-lg p-5">
+                  <h4 className="text-blue-300 font-bold mb-2">Korea: Jin et al. (2012)</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• 87 infants assessed</li>
+                    <li>• Most secure; very few avoidant; higher resistant</li>
+                    <li>• Mirrors Japan → proximity caregiving</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border border-green-500/40 shadow-lg p-5">
+                  <h4 className="text-green-300 font-bold mb-2">Takeaways</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Secure norm supports universality</li>
+                    <li>• Cultural practices alter avoidant/resistant balance</li>
+                    <li>• Avoid imposed etic: Strange Situation may misclassify in some cultures</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 5:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 3: Concept"
+                title="Bowlby: Maternal Deprivation"
+                icon={Shield}
+                time="7 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-2 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-purple-500 shadow-xl p-5 flex flex-col">
+                  <h3 className="text-purple-300 font-bold mb-3">Core Claims</h3>
+                  <ul className="text-gray-300 text-sm space-y-2 flex-grow">
+                    <li>• Critical period: up to ~30 months for continuous care</li>
+                    <li>• Separation → potential low IQ, affectionless psychopathy</li>
+                    <li>• Internal working model disrupted by prolonged loss</li>
+                  </ul>
+                  <div className="bg-gray-900/50 border border-purple-500/30 rounded-lg p-4 text-sm text-purple-200">
+                    44 thieves study: affectionless thieves often had prolonged separations; Goldfarb orphanage study showed IQ deficits vs fostered group.
+                  </div>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
+                  <h3 className="text-green-300 font-bold mb-3">Key Evidence Points</h3>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• 44 thieves (Bowlby): linked separation to affectionless psychopathy</li>
+                    <li>• Goldfarb (1943): fostered IQ 96 vs orphanage IQ 68</li>
+                    <li>• Czech twins: severe privation but recovery with quality care → sensitive period?</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 6:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 3: Evaluation"
+                title="Evaluating Deprivation"
+                icon={Brain}
+                time="6 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-red-500 shadow-xl p-5">
+                  <h4 className="text-red-300 font-bold mb-2">Flawed Evidence</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Bowlby assessed and interviewed → researcher bias risk</li>
+                    <li>• Goldfarb confounds: trauma + institutional care</li>
+                    <li>• Lewis replication (500 cases) found no link to psychopathy</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-blue-500 shadow-xl p-5">
+                  <h4 className="text-blue-300 font-bold mb-2">Deprivation vs Privation</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Rutter: deprivation = loss after bond; privation = no bond formed</li>
+                    <li>• Severe outcomes often from privation (institutionalisation)</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
+                  <h4 className="text-green-300 font-bold mb-2">Critical vs Sensitive</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Czech twins recovered with quality care → not inevitable damage</li>
+                    <li>• Animal evidence (Levy rat study) suggests social impact of short separations</li>
+                    <li>• Sensitive period framing fits data better</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 7:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 4: Application"
+                title="Global Attachment Analyst"
+                icon={Globe2}
+                time="12 MINS"
+                isPresentation={isPresentation}
+              />
+              <Lesson7Simulation isPresentation={isPresentation} />
+            </Slide>
+          );
+
+        case 8:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 5: Check"
+                title="Understanding Check"
+                icon={Brain}
+                time="6 MINS"
+                isPresentation={isPresentation}
+              />
+              <UnderstandingCheck
+                questions={[
+                  { id: 1, type: 'scenario', question: 'Which country in van IJzendoorn & Kroonenberg showed the lowest secure proportion (~50%)?', options: [{ text: 'China', correct: true }, { text: 'Great Britain', correct: false }, { text: 'Germany', correct: false }, { text: 'Israel', correct: false }], feedback: 'China had ~50% secure, the lowest in the meta-analysis.' },
+                  { id: 2, type: 'scenario', question: 'Simonelli et al. (2014) in Italy mainly found...', options: [{ text: 'More avoidant infants linked to working mothers and childcare', correct: true }, { text: 'More resistant infants due to co-sleeping', correct: false }, { text: 'No secure attachments at all', correct: false }, { text: 'Only Type D disorganised', correct: false }], feedback: 'Higher avoidant rates were attributed to increased maternal employment and childcare use.' },
+                  { id: 3, type: 'scenario', question: 'What key criticism did Rutter raise about Bowlby\'s deprivation?', options: [{ text: 'He said attachment is impossible to study', correct: false }, { text: 'He argued Bowlby confused deprivation with privation', correct: true }, { text: 'He rejected critical periods entirely', correct: false }, { text: 'He said affectionless psychopathy is fictional', correct: false }], feedback: 'Rutter distinguished deprivation (loss) from privation (no attachment formed); severe outcomes often reflect privation.' },
+                  { id: 4, type: 'scenario', question: 'What does a large within-country variation (150% greater) suggest?', options: [{ text: 'Culture has no effect', correct: false }, { text: 'Differences within cultures can be bigger than between countries', correct: true }, { text: 'Strange Situation is invalid everywhere', correct: false }, { text: 'Only resistant attachment exists', correct: false }], feedback: 'Samples within a country can vary widely; avoid over-generalising national averages.' },
+                  { id: 5, type: 'scenario', question: 'Critical vs sensitive period debate was informed by which case?', options: [{ text: 'Czech twins recovering after severe early privation', correct: true }, { text: 'Harlow\'s monkeys choosing wire mother', correct: false }, { text: 'Meltzoff and Moore facial imitation', correct: false }, { text: 'Grossmann father play study', correct: false }], feedback: 'Czech twins recovered with high-quality care, suggesting a sensitive rather than fixed critical period.' }
+                ]}
+                themeColor="purple"
+                isPresentation={isPresentation}
+              />
+            </Slide>
+          );
+
+        case 9:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 5: Assessment"
+                title="Essay Plan"
+                icon={Clock}
+                time="5 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`w-full h-full flex flex-col ${isPresentation ? 'px-8' : 'px-4'}`}>
+                <div className={`bg-gradient-to-r from-purple-900/40 to-purple-800/20 border-l-4 border-purple-500 rounded-r-xl shadow-xl mb-6 ${isPresentation ? 'p-6' : 'p-4'}`}>
+                  <p className={`text-purple-200 font-bold ${isPresentation ? 'text-2xl' : 'text-lg'}`}>
+                    📝 Sample Question: "Discuss cultural variations in attachment and evaluate Bowlby\'s maternal deprivation hypothesis." (16 marks)
+                  </p>
+                </div>
+
+                {!showEssayPlan7 ? (
+                  <div className="flex-grow flex items-center justify-center">
+                    <button
+                      onClick={() => setShowEssayPlan7(true)}
+                      className={`group flex flex-col items-center gap-4 bg-gray-800 hover:bg-gray-700 border-2 border-dashed border-purple-500/50 hover:border-purple-400 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-purple-500/20 ${isPresentation ? 'px-16 py-12' : 'px-12 py-8'}`}
+                    >
+                      <div className={`rounded-full bg-purple-900/50 group-hover:bg-purple-800/60 transition-colors ${isPresentation ? 'p-6' : 'p-4'}`}>
+                        <Eye size={isPresentation ? 48 : 32} className="text-purple-300 group-hover:text-purple-200 transition-colors" />
+                      </div>
+                      <span className={`text-purple-300 group-hover:text-purple-200 font-semibold transition-colors ${isPresentation ? 'text-2xl' : 'text-lg'}`}>
+                        Click to Reveal Essay Plan
+                      </span>
+                      <span className={`text-gray-500 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                        Try planning your answer first!
+                      </span>
+                    </button>
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => setShowEssayPlan7(false)}
+                      className={`self-end mb-3 flex items-center gap-2 text-gray-400 hover:text-purple-300 transition-colors ${isPresentation ? 'text-base' : 'text-sm'}`}
+                    >
+                      <EyeOff size={isPresentation ? 18 : 14} />
+                      Hide Plan
+                    </button>
+
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 flex-grow ${isPresentation ? 'gap-8' : 'gap-5'} animate-fadeIn`}>
+                      <div className={`bg-gray-800 rounded-xl border-t-4 border-purple-500 shadow-xl flex flex-col ${isPresentation ? 'p-8' : 'p-5'}`}>
+                        <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                          <span className={`bg-purple-900/60 text-purple-300 font-bold rounded-lg ${isPresentation ? 'px-4 py-2 text-xl' : 'px-3 py-1 text-sm'}`}>AO1</span>
+                          <h4 className={`font-bold text-purple-300 ${isPresentation ? 'text-xl' : 'text-base'}`}>Knowledge (6 marks)</h4>
+                        </div>
+                        <ul className={`text-gray-300 space-y-2 flex-grow ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                          <li>✓ Define cultural variation & imposed etic</li>
+                          <li>✓ van IJzendoorn & Kroonenberg findings</li>
+                          <li>✓ Examples: Japan/Korea vs Germany patterns</li>
+                          <li>✓ Bowlby deprivation: critical period, outcomes</li>
+                          <li>✓ 44 thieves + Goldfarb evidence</li>
+                        </ul>
+                      </div>
+
+                      <div className={`bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl flex flex-col ${isPresentation ? 'p-8' : 'p-5'}`}>
+                        <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                          <span className={`bg-green-900/60 text-green-300 font-bold rounded-lg ${isPresentation ? 'px-4 py-2 text-xl' : 'px-3 py-1 text-sm'}`}>AO3</span>
+                          <h4 className={`font-bold text-green-300 ${isPresentation ? 'text-xl' : 'text-base'}`}>Evaluation (10 marks)</h4>
+                        </div>
+                        <ul className={`text-gray-300 space-y-2 flex-grow ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                          <li>✓ Secure norm supports universality</li>
+                          <li>✓ Imposed etic & within-culture variation</li>
+                          <li>✓ Flawed evidence + confounds (44 thieves/Goldfarb)</li>
+                          <li>✓ Deprivation vs privation (Rutter)</li>
+                          <li>✓ Critical vs sensitive period (Czech twins)</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            </Slide>
+          );
+      }
+    }
+
+    // Lesson 8: Romanian Orphan Studies & Later Relationships
+    if (currentLesson === 8) {
+      switch (currentSlide) {
+        case 0:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <div className="flex flex-col items-center justify-center h-full text-center">
+                <div className="relative mb-8">
+                  <div className="absolute inset-0 bg-slate-400 blur-[110px] opacity-20 rounded-full animate-pulse-slate"></div>
+                  <div className="relative z-10 flex gap-4 items-center">
+                    <Home size={isPresentation ? 96 : 78} className="text-slate-200" />
+                    <Heart size={isPresentation ? 90 : 72} className="text-rose-200 animate-heartbeat" />
+                  </div>
+                </div>
+                <h1 className={`font-bold text-white mb-4 tracking-tight ${isPresentation ? 'text-6xl' : 'text-4xl'}`}>
+                  Romanian Orphan Studies <span className="text-slate-200">& Later Relationships</span>
+                </h1>
+                <h2 className="text-slate-300 text-sm tracking-[0.4em] uppercase mb-10 font-bold">
+                  Attachment Lesson 08
+                </h2>
+                <button
+                  onClick={nextSlide}
+                  className={`group relative bg-slate-900 border-2 border-slate-400 text-slate-100 font-bold px-12 py-4 rounded-xl hover:bg-gray-800 transition-all ${isPresentation ? 'text-2xl' : 'text-lg'} shadow-lg shadow-slate-400/20 hover:shadow-slate-300/40`}
+                >
+                  <span className="relative z-10">Start Lesson</span>
+                  <div className="absolute inset-0 bg-slate-300/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </button>
+              </div>
+            </Slide>
+          );
+
+        case 1:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 1: Activation"
+                title="Do Now Quiz"
+                icon={Activity}
+                time="5 MINS"
+                isPresentation={isPresentation}
+              />
+              <DoNowQuiz questions={lesson8DoNow} isPresentation={isPresentation} />
+            </Slide>
+          );
+
+        case 2:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 2: Objectives"
+                title="Learning Goals"
+                icon={Target}
+                time="4 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 md:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-slate-400 shadow-xl p-5">
+                  <p className="text-slate-200 font-bold mb-2">AO1 Describe</p>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Rutter ERA findings (IQ, disinhibited attachment)</li>
+                    <li>• Zeanah (BEI-style) institutional findings</li>
+                    <li>• Internal working model and later relationships</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-blue-500 shadow-xl p-5">
+                  <p className="text-blue-300 font-bold mb-2">AO2 Apply</p>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Predict outcomes by age of adoption</li>
+                    <li>• Link attachment type to romantic patterns</li>
+                    <li>• Use IWM to interpret case material</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
+                  <p className="text-green-300 font-bold mb-2">AO3 Evaluate</p>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Real-world applications (key worker model)</li>
+                    <li>• Confounds/attrition and cultural limits</li>
+                    <li>• Probabilistic view of continuity vs determinism</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 3:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 2: Concept"
+                title="Rutter ERA Study"
+                icon={Shield}
+                time="7 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border border-slate-400/40 shadow-lg p-5">
+                  <h4 className="text-slate-200 font-bold mb-2">Sample & Groups</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Romanian adoptees assessed at 4, 6, 11, 15</li>
+                    <li>• Adopted &lt;6m, 6-24m, &gt;24m</li>
+                    <li>• Compared with UK adoptee controls</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border border-green-400/40 shadow-lg p-5">
+                  <h4 className="text-green-300 font-bold mb-2">Findings</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• IQ at 11: &lt;6m ≈102, 6-24m ≈86, &gt;24m ≈77</li>
+                    <li>• Disinhibited attachment common when adopted after 6m</li>
+                    <li>• Some catch-up, but age mattered</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border border-blue-400/40 shadow-lg p-5">
+                  <h4 className="text-blue-300 font-bold mb-2">Meaning</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Supports sensitive period but recovery possible</li>
+                    <li>• Highlights disinhibited attachment as institution effect</li>
+                    <li>• Natural experiment with practical implications</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 4:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 2: Concept"
+                title="Zeanah et al. (BEI-style)"
+                icon={AlertTriangle}
+                time="6 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-2 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-slate-400 shadow-xl p-5">
+                  <h4 className="text-slate-200 font-bold mb-2">Procedure</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• 95 institutionalised children (12-31 months) vs 50 controls</li>
+                    <li>• Attachment assessed (Strange Situation style) + carers reported disinhibited behaviours</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
+                  <h4 className="text-green-300 font-bold mb-2">Findings</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• 65% disorganised; 19% secure vs 74% secure controls</li>
+                    <li>• High disinhibited attachment in institutional group</li>
+                  </ul>
+                  <p className="text-gray-300 text-sm mt-2">Supports institution-specific effects on attachment quality.</p>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 5:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 3: Evaluation"
+                title="Evaluating Institutionalisation"
+                icon={Brain}
+                time="6 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
+                  <h4 className="text-green-300 font-bold mb-2">Strengths</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Real-world impact: key worker model, avoidance of large rotating staff</li>
+                    <li>• Natural experiment with clear timing of adoption</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-red-500 shadow-xl p-5">
+                  <h4 className="text-red-300 font-bold mb-2">Limitations</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Romanian context extreme; limits generalisation</li>
+                    <li>• Possible confounds (nutrition, medical care) & attrition</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-blue-500 shadow-xl p-5">
+                  <h4 className="text-blue-300 font-bold mb-2">Interpretation</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Sensitive period rather than absolute critical period</li>
+                    <li>• Outcomes probabilistic, not deterministic</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 6:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 3: Concept"
+                title="Later Relationships & IWM"
+                icon={Heart}
+                time="7 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-2 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-slate-400 shadow-xl p-5">
+                  <h4 className="text-slate-200 font-bold mb-2">Internal Working Model</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Mental template for self, others, relationships</li>
+                    <li>• Guides expectations in peer, romantic, and parenting contexts</li>
+                  </ul>
+                  <div className="bg-gray-900/50 border border-slate-400/40 rounded-lg p-4 text-sm text-slate-100 mt-3">
+                    Hazan & Shaver love quiz: 56% secure, 25% avoidant, 19% resistant. Secure → longer, trusting romance; avoidant → fear intimacy.
+                  </div>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
+                  <h4 className="text-green-300 font-bold mb-2">Evidence & Nuance</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• McCarthy: early secure → better friendships & romance</li>
+                    <li>• Regensburg study found no continuity → mixed evidence</li>
+                    <li>• Continuity is probabilistic; later care can shift trajectories</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 7:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 3: Evaluation"
+                title="Evaluating Continuity"
+                icon={Brain}
+                time="5 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
+                  <h4 className="text-green-300 font-bold mb-2">Support</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Fearon & Roisman review: early attachment predicts later social/mental health</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-red-500 shadow-xl p-5">
+                  <h4 className="text-red-300 font-bold mb-2">Challenges</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Retrospective self-report validity issues</li>
+                    <li>• Confounds: parenting style, genetics</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-xl border-t-4 border-blue-500 shadow-xl p-5">
+                  <h4 className="text-blue-300 font-bold mb-2">Interpretation</h4>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li>• Continuity is probabilistic, not destiny</li>
+                    <li>• Early risk signals need for support, not determinism</li>
+                  </ul>
+                </div>
+              </div>
+            </Slide>
+          );
+
+        case 8:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 4: Application"
+                title="Recovery & Relationships Lab"
+                icon={Shield}
+                time="12 MINS"
+                isPresentation={isPresentation}
+              />
+              <Lesson8Simulation isPresentation={isPresentation} />
+            </Slide>
+          );
+
+        case 9:
+          return (
+            <Slide isPresentation={isPresentation}>
+              <PhaseHeader
+                phase="Phase 5: Assessment"
+                title="Essay Plan"
+                icon={Clock}
+                time="5 MINS"
+                isPresentation={isPresentation}
+              />
+              <div className={`w-full h-full flex flex-col ${isPresentation ? 'px-8' : 'px-4'}`}>
+                <div className={`bg-gradient-to-r from-slate-900/60 to-slate-800/30 border-l-4 border-slate-400 rounded-r-xl shadow-xl mb-6 ${isPresentation ? 'p-6' : 'p-4'}`}>
+                  <p className={`text-slate-100 font-bold ${isPresentation ? 'text-2xl' : 'text-lg'}`}>
+                    📝 Sample Question: "Discuss the effects of institutionalisation and the influence of early attachment on later relationships." (16 marks)
+                  </p>
+                </div>
+
+                {!showEssayPlan8 ? (
+                  <div className="flex-grow flex items-center justify-center">
+                    <button
+                      onClick={() => setShowEssayPlan8(true)}
+                      className={`group flex flex-col items-center gap-4 bg-gray-800 hover:bg-gray-700 border-2 border-dashed border-slate-400/60 hover:border-slate-200 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-slate-300/20 ${isPresentation ? 'px-16 py-12' : 'px-12 py-8'}`}
+                    >
+                      <div className={`rounded-full bg-slate-900/60 group-hover:bg-slate-800/70 transition-colors ${isPresentation ? 'p-6' : 'p-4'}`}>
+                        <Eye size={isPresentation ? 48 : 32} className="text-slate-100 group-hover:text-white transition-colors" />
+                      </div>
+                      <span className={`text-slate-100 font-semibold transition-colors ${isPresentation ? 'text-2xl' : 'text-lg'}`}>
+                        Click to Reveal Essay Plan
+                      </span>
+                      <span className={`text-gray-500 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                        Try planning your answer first!
+                      </span>
+                    </button>
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => setShowEssayPlan8(false)}
+                      className={`self-end mb-3 flex items-center gap-2 text-gray-400 hover:text-slate-100 transition-colors ${isPresentation ? 'text-base' : 'text-sm'}`}
+                    >
+                      <EyeOff size={isPresentation ? 18 : 14} />
+                      Hide Plan
+                    </button>
+
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 flex-grow ${isPresentation ? 'gap-8' : 'gap-5'} animate-fadeIn`}>
+                      <div className={`bg-gray-800 rounded-xl border-t-4 border-slate-400 shadow-xl flex flex-col ${isPresentation ? 'p-8' : 'p-5'}`}>
+                        <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                          <span className={`bg-slate-900/60 text-slate-200 font-bold rounded-lg ${isPresentation ? 'px-4 py-2 text-xl' : 'px-3 py-1 text-sm'}`}>AO1</span>
+                          <h4 className={`font-bold text-slate-200 ${isPresentation ? 'text-xl' : 'text-base'}`}>Knowledge (6 marks)</h4>
+                        </div>
+                        <ul className={`text-gray-300 space-y-2 flex-grow ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                          <li>✓ Rutter ERA: sample, timing, IQ/disinhibited findings</li>
+                          <li>✓ Zeanah institutional findings (secure vs disorganised/disinhibited)</li>
+                          <li>✓ Define disinhibited attachment</li>
+                          <li>✓ Internal working model + Hazan & Shaver findings</li>
+                        </ul>
+                      </div>
+
+                      <div className={`bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl flex flex-col ${isPresentation ? 'p-8' : 'p-5'}`}>
+                        <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                          <span className={`bg-green-900/60 text-green-300 font-bold rounded-lg ${isPresentation ? 'px-4 py-2 text-xl' : 'px-3 py-1 text-sm'}`}>AO3</span>
+                          <h4 className={`font-bold text-green-300 ${isPresentation ? 'text-xl' : 'text-base'}`}>Evaluation (10 marks)</h4>
+                        </div>
+                        <ul className={`text-gray-300 space-y-2 flex-grow ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                          <li>✓ Strengths: real-world reform, natural experiment</li>
+                          <li>✓ Limits: Romanian context, confounds, attrition</li>
+                          <li>✓ Sensitive period vs determinism; probabilistic continuity</li>
+                          <li>✓ Validity issues in self-report/retrospective evidence for later relationships</li>
+                        </ul>
+                      </div>
+                    </div>
                   </>
                 )}
               </div>
