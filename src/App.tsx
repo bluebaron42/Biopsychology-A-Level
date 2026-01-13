@@ -19,7 +19,7 @@ import Lesson6Simulation from './components/Lesson6Simulation';
 import Lesson7Simulation from './components/Lesson7Simulation';
 import Lesson8Simulation from './components/Lesson8Simulation';
 import { lessons, lesson1DoNow, lesson2DoNow, lesson3DoNow, lesson4DoNow, lesson5DoNow, lesson6DoNow, lesson7DoNow, lesson8DoNow, lessonThemes } from './constants';
-import { Activity, Brain, Clock, Heart, Baby, Users, Target, Eye, EyeOff, Scale, Dna, BookOpen, Bird, FlaskConical, AlertTriangle, Lightbulb, Globe2, Shield, Home } from 'lucide-react';
+import { Activity, Brain, Clock, Heart, Baby, Users, Target, Eye, EyeOff, Scale, Dna, BookOpen, Bird, Feather, FlaskConical, AlertTriangle, Lightbulb, Globe2, Shield, Home } from 'lucide-react';
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -712,14 +712,16 @@ export default function App() {
           return (
             <Slide isPresentation={isPresentation}>
               <div className="flex flex-col items-center justify-center h-full text-center">
-                <div className="flex items-center gap-4 mb-6">
-                  <Clock size={isPresentation ? 64 : 48} className="text-amber-400 animate-pulse" />
-                  <Baby size={isPresentation ? 64 : 48} className="text-amber-400 animate-pulse" />
+                <div className="flex items-center gap-4 mb-6 relative">
+                  <div className="absolute inset-0 bg-amber-500 blur-[100px] opacity-20 rounded-full"></div>
+                  <Clock size={isPresentation ? 64 : 48} className="text-amber-400 relative z-10" />
+                  <Baby size={isPresentation ? 64 : 48} className="text-amber-400 relative z-10" />
                 </div>
                 <h1 className={`font-black mb-4 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 bg-clip-text text-transparent ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
                   Schaffer's Stages of Attachment
                 </h1>
-                <p className={`text-gray-400 max-w-2xl mb-8 ${isPresentation ? 'text-2xl' : 'text-lg'}`}>
+                <div className={`h-1 w-64 bg-amber-600 mb-4`}></div>
+                <p className={`text-amber-400 max-w-2xl mb-8 tracking-widest uppercase font-bold ${isPresentation ? 'text-xl' : 'text-sm'}`}>
                   How attachment develops over the first year of life
                 </p>
                 <div className={`flex flex-wrap justify-center gap-3 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
@@ -1138,14 +1140,16 @@ export default function App() {
           return (
             <Slide isPresentation={isPresentation}>
               <div className="flex flex-col items-center justify-center h-full text-center">
-                <div className="flex items-center gap-4 mb-6">
-                  <Users size={isPresentation ? 64 : 48} className="text-orange-400 animate-pulse" />
-                  <Scale size={isPresentation ? 64 : 48} className="text-orange-400 animate-pulse" />
+                <div className="flex items-center gap-4 mb-6 relative">
+                  <div className="absolute inset-0 bg-orange-500 blur-[100px] opacity-20 rounded-full"></div>
+                  <Users size={isPresentation ? 64 : 48} className="text-orange-400 relative z-10" />
+                  <Scale size={isPresentation ? 64 : 48} className="text-orange-400 relative z-10" />
                 </div>
                 <h1 className={`font-black mb-4 bg-gradient-to-r from-orange-400 via-orange-300 to-amber-400 bg-clip-text text-transparent ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
                   The Role of the Father
                 </h1>
-                <p className={`text-gray-400 max-w-2xl mb-8 ${isPresentation ? 'text-2xl' : 'text-lg'}`}>
+                <div className={`h-1 w-64 bg-orange-600 mb-4`}></div>
+                <p className={`text-orange-400 max-w-2xl mb-8 tracking-widest uppercase font-bold ${isPresentation ? 'text-xl' : 'text-sm'}`}>
                   Biological instinct or social construction?
                 </p>
                 <div className={`flex flex-wrap justify-center gap-3 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
@@ -1586,23 +1590,22 @@ export default function App() {
           return (
             <Slide isPresentation={isPresentation}>
               <div className="flex flex-col items-center justify-center h-full text-center">
-                <div className={`rounded-full bg-red-900/50 mb-6 animate-pulse-red ${isPresentation ? 'p-8' : 'p-5'}`}>
-                  <Bird className={`text-red-400 ${isPresentation ? 'w-20 h-20' : 'w-12 h-12'}`} />
+                <div className="flex items-center gap-4 mb-6 relative">
+                  <div className="absolute inset-0 bg-red-500 blur-[100px] opacity-20 rounded-full"></div>
+                  <Bird size={isPresentation ? 64 : 48} className="text-red-400 relative z-10" />
+                  <Feather size={isPresentation ? 64 : 48} className="text-red-400 relative z-10" />
                 </div>
-                <h1 className={`font-black text-white mb-4 tracking-tighter animate-slideDown ${isPresentation ? 'text-6xl' : 'text-4xl'}`}>
+                <h1 className={`font-black mb-4 bg-gradient-to-r from-red-400 via-red-300 to-rose-400 bg-clip-text text-transparent ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
                   Animal Studies of Attachment
                 </h1>
-                <p className={`text-red-400 font-bold tracking-widest animate-fadeIn ${isPresentation ? 'text-xl' : 'text-sm'}`}>
-                  LESSON 04 • LORENZ & HARLOW
+                <div className={`h-1 w-64 bg-red-600 mb-4`}></div>
+                <p className={`text-red-400 max-w-2xl mb-8 tracking-widest uppercase font-bold ${isPresentation ? 'text-xl' : 'text-sm'}`}>
+                  Lorenz & Harlow
                 </p>
-                <div className={`flex items-center gap-4 mt-8 ${isPresentation ? 'gap-6' : 'gap-4'}`}>
-                  <div className={`flex items-center gap-2 text-gray-500 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
-                    <Clock size={isPresentation ? 20 : 16} />
-                    <span>50 mins</span>
-                  </div>
-                  <div className={`bg-red-900/50 text-red-400 rounded-full font-bold ${isPresentation ? 'px-5 py-2 text-lg' : 'px-4 py-1 text-sm'}`}>
-                    A-Level Psychology
-                  </div>
+                <div className={`flex flex-wrap justify-center gap-3 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                  <span className="bg-red-900/30 text-red-400 px-4 py-2 rounded-full border border-red-500/30">Imprinting & Critical Periods</span>
+                  <span className="bg-red-900/30 text-red-400 px-4 py-2 rounded-full border border-red-500/30">Contact Comfort</span>
+                  <span className="bg-red-900/30 text-red-400 px-4 py-2 rounded-full border border-red-500/30">Surrogate Mothers</span>
                 </div>
               </div>
             </Slide>
@@ -2032,23 +2035,22 @@ export default function App() {
           return (
             <Slide isPresentation={isPresentation}>
               <div className="flex flex-col items-center justify-center h-full text-center">
-                <div className={`rounded-full bg-yellow-900/50 mb-6 animate-pulse-yellow ${isPresentation ? 'p-8' : 'p-5'}`}>
-                  <BookOpen className={`text-yellow-400 ${isPresentation ? 'w-20 h-20' : 'w-12 h-12'}`} />
+                <div className="flex items-center gap-4 mb-6 relative">
+                  <div className="absolute inset-0 bg-yellow-500 blur-[100px] opacity-20 rounded-full"></div>
+                  <BookOpen size={isPresentation ? 64 : 48} className="text-yellow-400 relative z-10" />
+                  <Brain size={isPresentation ? 64 : 48} className="text-yellow-400 relative z-10" />
                 </div>
-                <h1 className={`font-black text-white mb-4 tracking-tighter animate-slideDown ${isPresentation ? 'text-6xl' : 'text-4xl'}`}>
+                <h1 className={`font-black mb-4 bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
                   Explanations of Attachment
                 </h1>
-                <p className={`text-yellow-400 font-bold tracking-widest animate-fadeIn ${isPresentation ? 'text-xl' : 'text-sm'}`}>
-                  LESSON 05 • LEARNING THEORY VS BOWLBY
+                <div className={`h-1 w-64 bg-yellow-600 mb-4`}></div>
+                <p className={`text-yellow-400 max-w-2xl mb-8 tracking-widest uppercase font-bold ${isPresentation ? 'text-xl' : 'text-sm'}`}>
+                  Learning Theory vs Bowlby
                 </p>
-                <div className={`flex items-center gap-4 mt-8 ${isPresentation ? 'gap-6' : 'gap-4'}`}>
-                  <div className={`flex items-center gap-2 text-gray-500 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
-                    <Clock size={isPresentation ? 20 : 16} />
-                    <span>50 mins</span>
-                  </div>
-                  <div className={`bg-yellow-900/50 text-yellow-400 rounded-full font-bold ${isPresentation ? 'px-5 py-2 text-lg' : 'px-4 py-1 text-sm'}`}>
-                    A-Level Psychology
-                  </div>
+                <div className={`flex flex-wrap justify-center gap-3 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                  <span className="bg-yellow-900/30 text-yellow-400 px-4 py-2 rounded-full border border-yellow-500/30">Classical & Operant Conditioning</span>
+                  <span className="bg-yellow-900/30 text-yellow-400 px-4 py-2 rounded-full border border-yellow-500/30">Monotropic Theory</span>
+                  <span className="bg-yellow-900/30 text-yellow-400 px-4 py-2 rounded-full border border-yellow-500/30">IWM & Social Releasers</span>
                 </div>
               </div>
             </Slide>
@@ -2466,23 +2468,22 @@ export default function App() {
           return (
             <Slide isPresentation={isPresentation}>
               <div className="flex flex-col items-center justify-center h-full text-center">
-                <div className={`rounded-full bg-teal-900/50 mb-6 animate-pulse-teal ${isPresentation ? 'p-8' : 'p-5'}`}>
-                  <Baby className={`text-teal-400 ${isPresentation ? 'w-20 h-20' : 'w-12 h-12'}`} />
+                <div className="flex items-center gap-4 mb-6 relative">
+                  <div className="absolute inset-0 bg-teal-500 blur-[100px] opacity-20 rounded-full"></div>
+                  <Baby size={isPresentation ? 64 : 48} className="text-teal-400 relative z-10" />
+                  <Heart size={isPresentation ? 64 : 48} className="text-teal-400 relative z-10" />
                 </div>
-                <h1 className={`font-black text-white mb-4 tracking-tighter animate-slideDown ${isPresentation ? 'text-6xl' : 'text-4xl'}`}>
+                <h1 className={`font-black mb-4 bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
                   Types of Attachment
                 </h1>
-                <p className={`text-teal-400 font-bold tracking-widest animate-fadeIn ${isPresentation ? 'text-xl' : 'text-sm'}`}>
-                  LESSON 06 • AINSWORTH'S STRANGE SITUATION
+                <div className={`h-1 w-64 bg-teal-600 mb-4`}></div>
+                <p className={`text-teal-400 max-w-2xl mb-8 tracking-widest uppercase font-bold ${isPresentation ? 'text-xl' : 'text-sm'}`}>
+                  Ainsworth's Strange Situation
                 </p>
-                <div className={`flex items-center gap-4 mt-8 ${isPresentation ? 'gap-6' : 'gap-4'}`}>
-                  <div className={`flex items-center gap-2 text-gray-500 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
-                    <Clock size={isPresentation ? 20 : 16} />
-                    <span>50 mins</span>
-                  </div>
-                  <div className={`bg-teal-900/50 text-teal-400 rounded-full font-bold ${isPresentation ? 'px-5 py-2 text-lg' : 'px-4 py-1 text-sm'}`}>
-                    A-Level Psychology
-                  </div>
+                <div className={`flex flex-wrap justify-center gap-3 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                  <span className="bg-teal-900/30 text-teal-400 px-4 py-2 rounded-full border border-teal-500/30">Secure, Avoidant & Resistant</span>
+                  <span className="bg-teal-900/30 text-teal-400 px-4 py-2 rounded-full border border-teal-500/30">Ainsworth (1970)</span>
+                  <span className="bg-teal-900/30 text-teal-400 px-4 py-2 rounded-full border border-teal-500/30">Attachment Styles</span>
                 </div>
               </div>
             </Slide>
@@ -2901,26 +2902,23 @@ export default function App() {
           return (
             <Slide isPresentation={isPresentation}>
               <div className="flex flex-col items-center justify-center h-full text-center">
-                <div className="relative mb-8">
-                  <div className="absolute inset-0 bg-purple-500 blur-[110px] opacity-20 rounded-full animate-pulse-purple"></div>
-                  <div className="relative z-10 flex gap-4 items-center">
-                    <Globe2 size={isPresentation ? 110 : 90} className="text-purple-300" />
-                    <AlertTriangle size={isPresentation ? 88 : 72} className="text-yellow-300 animate-heartbeat" />
-                  </div>
+                <div className="flex items-center gap-4 mb-6 relative">
+                  <div className="absolute inset-0 bg-purple-500 blur-[100px] opacity-20 rounded-full"></div>
+                  <Globe2 size={isPresentation ? 64 : 48} className="text-purple-300 relative z-10" />
+                  <AlertTriangle size={isPresentation ? 64 : 48} className="text-purple-300 relative z-10" />
                 </div>
-                <h1 className={`font-bold text-white mb-4 tracking-tight ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
-                  Cultural Variations <span className="text-purple-300">& Maternal Deprivation</span>
+                <h1 className={`font-black mb-4 bg-gradient-to-r from-purple-400 via-purple-300 to-pink-400 bg-clip-text text-transparent ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
+                  Cultural Variations & Maternal Deprivation
                 </h1>
-                <h2 className="text-purple-400 text-sm tracking-[0.4em] uppercase mb-10 font-bold">
-                  Attachment Lesson 07
-                </h2>
-                <button
-                  onClick={nextSlide}
-                  className={`group relative bg-slate-900 border-2 border-purple-500 text-purple-200 font-bold px-12 py-4 rounded-xl hover:bg-purple-900/30 transition-all ${isPresentation ? 'text-2xl' : 'text-lg'} shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40`}
-                >
-                  <span className="relative z-10">Start Lesson</span>
-                  <div className="absolute inset-0 bg-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </button>
+                <div className={`h-1 w-64 bg-purple-600 mb-4`}></div>
+                <p className={`text-purple-400 max-w-2xl mb-8 tracking-widest uppercase font-bold ${isPresentation ? 'text-xl' : 'text-sm'}`}>
+                  Imposed Etics & Critical Periods
+                </p>
+                <div className={`flex flex-wrap justify-center gap-3 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                  <span className="bg-purple-900/30 text-purple-400 px-4 py-2 rounded-full border border-purple-500/30">van IJzendoorn & Kroonenberg</span>
+                  <span className="bg-purple-900/30 text-purple-400 px-4 py-2 rounded-full border border-purple-500/30">Cultural Variation in Attachment</span>
+                  <span className="bg-purple-900/30 text-purple-400 px-4 py-2 rounded-full border border-purple-500/30">Bowlby's Deprivation Hypothesis</span>
+                </div>
               </div>
             </Slide>
           );
@@ -2988,29 +2986,130 @@ export default function App() {
                 time="8 MINS"
                 isPresentation={isPresentation}
               />
-              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
-                <div className="bg-gray-800 rounded-xl border border-purple-500/40 shadow-lg p-5 flex flex-col">
-                  <h3 className="text-purple-300 font-bold mb-3">Meta-analysis Overview</h3>
-                  <ul className="text-gray-300 text-sm space-y-2 flex-grow">
-                    <li>• 32 Strange Situation studies across 8 countries</li>
-                    <li>• N = 1,990 infants</li>
-                    <li>• Secure attachment most common everywhere</li>
-                    <li>• Britain ~75% secure; China ~50% secure</li>
-                  </ul>
-                  <div className="mt-3 text-purple-200 text-sm">Within-country variation 150% greater than between-country</div>
+              <div className={`grid grid-cols-1 lg:grid-cols-2 h-full ${isPresentation ? 'gap-8 p-6' : 'gap-5 p-4'}`}>
+                {/* Left: Study Overview Card */}
+                <div className={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-t-4 border-purple-500 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-8' : 'p-6'}`}>
+                  <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-4">
+                    <div className="p-3 bg-purple-900/50 rounded-lg">
+                      <Globe2 size={isPresentation ? 32 : 24} className="text-purple-400" />
+                    </div>
+                    <div>
+                      <h3 className={`font-bold text-purple-300 ${isPresentation ? 'text-2xl' : 'text-xl'}`}>Meta-Analysis</h3>
+                      <p className={`text-gray-400 ${isPresentation ? 'text-base' : 'text-xs'}`}>van IJzendoorn & Kroonenberg (1988)</p>
+                    </div>
+                  </div>
+
+                  {/* Sample Stats */}
+                  <div className={`grid grid-cols-2 gap-4 mb-6 ${isPresentation ? 'gap-6' : 'gap-4'}`}>
+                    <div className="bg-purple-900/30 rounded-xl p-4 border border-purple-500/30">
+                      <p className={`text-purple-400 font-bold mb-1 ${isPresentation ? 'text-4xl' : 'text-3xl'}`}>32</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Studies</p>
+                    </div>
+                    <div className="bg-purple-900/30 rounded-xl p-4 border border-purple-500/30">
+                      <p className={`text-purple-400 font-bold mb-1 ${isPresentation ? 'text-4xl' : 'text-3xl'}`}>8</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Countries</p>
+                    </div>
+                    <div className="col-span-2 bg-purple-900/30 rounded-xl p-4 border border-purple-500/30">
+                      <p className={`text-purple-400 font-bold mb-1 ${isPresentation ? 'text-4xl' : 'text-3xl'}`}>1,990</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Total Infants Assessed</p>
+                    </div>
+                  </div>
+
+                  {/* Key Finding */}
+                  <div className={`bg-gradient-to-r from-green-900/40 to-green-800/20 border-l-4 border-green-500 rounded-r-xl ${isPresentation ? 'p-6' : 'p-4'}`}>
+                    <p className={`text-green-300 font-bold mb-2 ${isPresentation ? 'text-xl' : 'text-base'}`}>🌍 Universal Norm</p>
+                    <p className={`text-gray-300 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                      Secure attachment was the <strong className="text-green-400">most common classification</strong> in every country sampled
+                    </p>
+                  </div>
+
+                  {/* Critical Stat */}
+                  <div className={`mt-6 bg-amber-900/20 border border-amber-500/40 rounded-xl ${isPresentation ? 'p-5' : 'p-4'}`}>
+                    <p className={`text-amber-300 font-bold mb-1 ${isPresentation ? 'text-lg' : 'text-sm'}`}>⚠️ Critical Finding</p>
+                    <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-xs'}`}>
+                      Within-country variation was <strong className="text-amber-400">150% greater</strong> than between-country variation
+                    </p>
+                  </div>
                 </div>
-                <div className="bg-gray-800 rounded-xl border border-blue-500/40 shadow-lg p-5">
-                  <h3 className="text-blue-300 font-bold mb-3">Key Patterns</h3>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Individualist: low resistant (under 14%)</li>
-                    <li>• Collectivist (Japan/Israel/China): higher resistant (25%+), lower avoidant</li>
-                    <li>• Imposed etic risk: procedure may over-label distress in proximity cultures</li>
-                  </ul>
-                </div>
-                <div className="bg-gray-800 rounded-xl border border-green-500/40 shadow-lg p-5">
-                  <h3 className="text-green-300 font-bold mb-3">Conclusion</h3>
-                  <p className="text-gray-300 text-sm mb-2">Secure is the universal norm → supports innate attachment.</p>
-                  <p className="text-gray-300 text-sm">Cultural practices shape proportions → need cultural sensitivity when interpreting Strange Situation.</p>
+
+                {/* Right: Country Data Comparison */}
+                <div className="flex flex-col gap-4">
+                  {/* Country Cards */}
+                  <div className={`bg-gray-800 rounded-xl border-t-4 border-blue-500 shadow-xl overflow-hidden ${isPresentation ? 'p-6' : 'p-4'}`}>
+                    <div className="flex items-center justify-between mb-3">
+                      <div>
+                        <h4 className={`font-bold text-blue-300 ${isPresentation ? 'text-xl' : 'text-base'}`}>🇬🇧 Great Britain</h4>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Highest secure proportion</p>
+                      </div>
+                      <div className={`text-right`}>
+                        <p className={`text-green-400 font-black ${isPresentation ? 'text-5xl' : 'text-3xl'}`}>75%</p>
+                        <p className={`text-gray-500 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Secure</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-center">
+                      <div className={`bg-green-900/30 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                        <p className={`text-green-400 font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>75%</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-xs' : 'text-[10px]'}`}>Secure</p>
+                      </div>
+                      <div className={`bg-blue-900/30 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                        <p className={`text-blue-400 font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>22%</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-xs' : 'text-[10px]'}`}>Avoidant</p>
+                      </div>
+                      <div className={`bg-red-900/30 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                        <p className={`text-red-400 font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>3%</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-xs' : 'text-[10px]'}`}>Resistant</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={`bg-gray-800 rounded-xl border-t-4 border-red-500 shadow-xl overflow-hidden ${isPresentation ? 'p-6' : 'p-4'}`}>
+                    <div className="flex items-center justify-between mb-3">
+                      <div>
+                        <h4 className={`font-bold text-red-300 ${isPresentation ? 'text-xl' : 'text-base'}`}>🇨🇳 China</h4>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Lowest secure proportion</p>
+                      </div>
+                      <div className={`text-right`}>
+                        <p className={`text-amber-400 font-black ${isPresentation ? 'text-5xl' : 'text-3xl'}`}>50%</p>
+                        <p className={`text-gray-500 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Secure</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-center">
+                      <div className={`bg-green-900/30 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                        <p className={`text-green-400 font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>50%</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-xs' : 'text-[10px]'}`}>Secure</p>
+                      </div>
+                      <div className={`bg-blue-900/30 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                        <p className={`text-blue-400 font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>25%</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-xs' : 'text-[10px]'}`}>Avoidant</p>
+                      </div>
+                      <div className={`bg-red-900/30 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                        <p className={`text-red-400 font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>25%</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-xs' : 'text-[10px]'}`}>Resistant</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Cultural Pattern Box */}
+                  <div className={`bg-gradient-to-br from-purple-900/40 to-pink-900/20 border-2 border-purple-500/50 rounded-xl ${isPresentation ? 'p-6' : 'p-4'}`}>
+                    <h4 className={`font-bold text-purple-300 mb-3 flex items-center gap-2 ${isPresentation ? 'text-lg' : 'text-base'}`}>
+                      <Globe2 size={isPresentation ? 24 : 18} />
+                      Cultural Patterns
+                    </h4>
+                    <ul className={`text-gray-300 space-y-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-400 mt-1">•</span>
+                        <span><strong className="text-blue-300">Individualist cultures:</strong> Low resistant (&lt;14%)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-red-400 mt-1">•</span>
+                        <span><strong className="text-red-300">Collectivist cultures:</strong> Higher resistant (25%+), lower avoidant</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-purple-400 mt-1">•</span>
+                        <span><strong className="text-purple-300">Imposed etic risk:</strong> Strange Situation may over-classify distress in proximity-focused cultures</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </Slide>
@@ -3021,35 +3120,133 @@ export default function App() {
             <Slide isPresentation={isPresentation}>
               <PhaseHeader
                 phase="Phase 2: Concept"
-                title="Other Studies & Implications"
+                title="Contemporary Cross-Cultural Research"
                 icon={BookOpen}
                 time="6 MINS"
                 isPresentation={isPresentation}
               />
-              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
-                <div className="bg-gray-800 rounded-xl border border-purple-500/40 shadow-lg p-5">
-                  <h4 className="text-purple-300 font-bold mb-2">Italy: Simonelli et al. (2014)</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• 76 infants (12 months) using Strange Situation</li>
-                    <li>• 50% secure, 36% avoidant</li>
-                    <li>• Linked to working mothers & professional childcare</li>
-                  </ul>
+              <div className={`h-full ${isPresentation ? 'p-6' : 'p-4'}`}>
+                <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 h-full`}>
+                  {/* Italy Study Card */}
+                  <div className={`bg-gradient-to-br from-purple-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-purple-500/40 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-8' : 'p-6'}`}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-16 h-16 rounded-full bg-purple-900/50 flex items-center justify-center border-2 border-purple-500/50">
+                        <span className="text-3xl">🇮🇹</span>
+                      </div>
+                      <div>
+                        <h3 className={`font-black text-purple-200 ${isPresentation ? 'text-2xl' : 'text-xl'}`}>Italy</h3>
+                        <p className={`text-purple-400 ${isPresentation ? 'text-base' : 'text-sm'}`}>Simonelli et al. (2014)</p>
+                      </div>
+                    </div>
+
+                    <div className={`bg-gray-900/60 rounded-xl border border-purple-500/30 mb-4 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className={`text-purple-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Sample Size</p>
+                          <p className={`text-white font-bold ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>76</p>
+                        </div>
+                        <div>
+                          <p className={`text-purple-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Age</p>
+                          <p className={`text-white font-bold ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>12m</p>
+                        </div>
+                      </div>
+                      
+                      {/* Attachment Distribution */}
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Secure</span>
+                          <span className={`text-green-400 font-bold ${isPresentation ? 'text-xl' : 'text-lg'}`}>50%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-2">
+                          <div className="bg-green-500 h-2 rounded-full" style={{width: '50%'}}></div>
+                        </div>
+                        <div className="flex items-center justify-between mt-3">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Avoidant</span>
+                          <span className={`text-blue-400 font-bold ${isPresentation ? 'text-xl' : 'text-lg'}`}>36%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-2">
+                          <div className="bg-blue-500 h-2 rounded-full" style={{width: '36%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`bg-gradient-to-r from-blue-900/30 to-blue-800/10 border-l-4 border-blue-500 rounded-r-xl flex-grow ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <p className={`text-blue-300 font-bold mb-2 ${isPresentation ? 'text-lg' : 'text-sm'}`}>👩‍💼 Interpretation</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        Higher avoidant rates linked to <strong className="text-blue-400">working mothers</strong> and increased use of <strong className="text-blue-400">professional childcare</strong>
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Korea Study Card */}
+                  <div className={`bg-gradient-to-br from-blue-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-blue-500/40 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-8' : 'p-6'}`}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-16 h-16 rounded-full bg-blue-900/50 flex items-center justify-center border-2 border-blue-500/50">
+                        <span className="text-3xl">🇰🇷</span>
+                      </div>
+                      <div>
+                        <h3 className={`font-black text-blue-200 ${isPresentation ? 'text-2xl' : 'text-xl'}`}>Korea</h3>
+                        <p className={`text-blue-400 ${isPresentation ? 'text-base' : 'text-sm'}`}>Jin et al. (2012)</p>
+                      </div>
+                    </div>
+
+                    <div className={`bg-gray-900/60 rounded-xl border border-blue-500/30 mb-4 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className={`text-blue-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Sample Size</p>
+                          <p className={`text-white font-bold ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>87</p>
+                        </div>
+                        <div>
+                          <p className={`text-blue-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Pattern</p>
+                          <p className={`text-white font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>🇯🇵 Similar</p>
+                        </div>
+                      </div>
+                      
+                      {/* Attachment Distribution */}
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Secure (Most)</span>
+                          <span className={`text-green-400 font-bold ${isPresentation ? 'text-xl' : 'text-lg'}`}>65%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-2">
+                          <div className="bg-green-500 h-2 rounded-full" style={{width: '65%'}}></div>
+                        </div>
+                        <div className="flex items-center justify-between mt-3">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Resistant (Higher)</span>
+                          <span className={`text-red-400 font-bold ${isPresentation ? 'text-xl' : 'text-lg'}`}>32%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-2">
+                          <div className="bg-red-500 h-2 rounded-full" style={{width: '32%'}}></div>
+                        </div>
+                        <div className="flex items-center justify-between mt-3">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Avoidant (Very Low)</span>
+                          <span className={`text-blue-400 font-bold ${isPresentation ? 'text-xl' : 'text-lg'}`}>3%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-2">
+                          <div className="bg-blue-500 h-2 rounded-full" style={{width: '3%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`bg-gradient-to-r from-purple-900/30 to-purple-800/10 border-l-4 border-purple-500 rounded-r-xl flex-grow ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <p className={`text-purple-300 font-bold mb-2 ${isPresentation ? 'text-lg' : 'text-sm'}`}>🏯 Cultural Context</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        Mirrors Japan with <strong className="text-purple-400">proximity-focused caregiving</strong> → higher resistant, very low avoidant pattern
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-gray-800 rounded-xl border border-blue-500/40 shadow-lg p-5">
-                  <h4 className="text-blue-300 font-bold mb-2">Korea: Jin et al. (2012)</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• 87 infants assessed</li>
-                    <li>• Most secure; very few avoidant; higher resistant</li>
-                    <li>• Mirrors Japan → proximity caregiving</li>
-                  </ul>
-                </div>
-                <div className="bg-gray-800 rounded-xl border border-green-500/40 shadow-lg p-5">
-                  <h4 className="text-green-300 font-bold mb-2">Takeaways</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Secure norm supports universality</li>
-                    <li>• Cultural practices alter avoidant/resistant balance</li>
-                    <li>• Avoid imposed etic: Strange Situation may misclassify in some cultures</li>
-                  </ul>
+
+                {/* Bottom Takeaway Banner */}
+                <div className={`mt-6 bg-gradient-to-r from-green-900/40 to-teal-900/20 border-2 border-green-500/50 rounded-2xl ${isPresentation ? 'p-6' : 'p-5'}`}>
+                  <h4 className={`font-bold text-green-300 mb-3 flex items-center gap-2 ${isPresentation ? 'text-xl' : 'text-lg'}`}>
+                    ✅ Key Takeaways
+                  </h4>
+                  <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                    <p className="text-gray-300"><span className="text-green-400 font-bold">•</span> Secure attachment remains <strong className="text-green-300">modal type</strong> across cultures</p>
+                    <p className="text-gray-300"><span className="text-blue-400 font-bold">•</span> Cultural practices <strong className="text-blue-300">alter avoidant/resistant balance</strong></p>
+                    <p className="text-gray-300"><span className="text-purple-400 font-bold">•</span> Avoid <strong className="text-purple-300">imposed etic</strong> — Strange Situation may misclassify in proximity cultures</p>
+                  </div>
                 </div>
               </div>
             </Slide>
@@ -3060,30 +3257,139 @@ export default function App() {
             <Slide isPresentation={isPresentation}>
               <PhaseHeader
                 phase="Phase 3: Concept"
-                title="Bowlby: Maternal Deprivation"
+                title="Bowlby: Maternal Deprivation Hypothesis"
                 icon={Shield}
                 time="7 MINS"
                 isPresentation={isPresentation}
               />
-              <div className={`grid grid-cols-1 lg:grid-cols-2 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-purple-500 shadow-xl p-5 flex flex-col">
-                  <h3 className="text-purple-300 font-bold mb-3">Core Claims</h3>
-                  <ul className="text-gray-300 text-sm space-y-2 flex-grow">
-                    <li>• Critical period: up to ~30 months for continuous care</li>
-                    <li>• Separation → potential low IQ, affectionless psychopathy</li>
-                    <li>• Internal working model disrupted by prolonged loss</li>
-                  </ul>
-                  <div className="bg-gray-900/50 border border-purple-500/30 rounded-lg p-4 text-sm text-purple-200">
-                    44 thieves study: affectionless thieves often had prolonged separations; Goldfarb orphanage study showed IQ deficits vs fostered group.
+              <div className={`h-full flex flex-col ${isPresentation ? 'p-6' : 'p-4'}`}>
+                {/* Timeline Header */}
+                <div className={`bg-gradient-to-r from-purple-900/50 to-purple-800/20 rounded-2xl border-2 border-purple-500/50 mb-6 ${isPresentation ? 'p-6' : 'p-5'}`}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-purple-900/60 rounded-xl">
+                      <Shield size={isPresentation ? 32 : 24} className="text-purple-400" />
+                    </div>
+                    <div>
+                      <h3 className={`font-black text-purple-200 ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>Critical Period Hypothesis</h3>
+                      <p className={`text-purple-400 ${isPresentation ? 'text-lg' : 'text-base'}`}>Continuous care needed in early years</p>
+                    </div>
+                  </div>
+                  
+                  {/* Visual Timeline */}
+                  <div className="relative">
+                    <div className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-purple-600 to-red-600"></div>
+                    <div className="relative flex justify-between items-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 rounded-full bg-green-600 border-4 border-gray-900 flex items-center justify-center mb-2 mx-auto relative z-10">
+                          <span className={`text-white font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>0</span>
+                        </div>
+                        <p className={`text-green-300 font-semibold ${isPresentation ? 'text-base' : 'text-sm'}`}>Birth</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>✅ Optimal</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-16 h-16 rounded-full bg-amber-600 border-4 border-gray-900 flex items-center justify-center mb-2 mx-auto relative z-10">
+                          <span className={`text-white font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>30m</span>
+                        </div>
+                        <p className={`text-amber-300 font-semibold ${isPresentation ? 'text-base' : 'text-sm'}`}>Critical Limit</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>⚠️ Risk increases</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-16 h-16 rounded-full bg-red-600 border-4 border-gray-900 flex items-center justify-center mb-2 mx-auto relative z-10">
+                          <span className={`text-white font-bold ${isPresentation ? 'text-xl' : 'text-base'}`}>5y+</span>
+                        </div>
+                        <p className={`text-red-300 font-semibold ${isPresentation ? 'text-base' : 'text-sm'}`}>Beyond Period</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>❌ Severe impact</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
-                  <h3 className="text-green-300 font-bold mb-3">Key Evidence Points</h3>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• 44 thieves (Bowlby): linked separation to affectionless psychopathy</li>
-                    <li>• Goldfarb (1943): fostered IQ 96 vs orphanage IQ 68</li>
-                    <li>• Czech twins: severe privation but recovery with quality care → sensitive period?</li>
-                  </ul>
+
+                {/* Core Claims & Evidence Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
+                  {/* Core Claims */}
+                  <div className={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-t-4 border-purple-500 shadow-2xl overflow-hidden ${isPresentation ? 'p-8' : 'p-6'}`}>
+                    <h4 className={`font-bold text-purple-300 mb-4 flex items-center gap-2 ${isPresentation ? 'text-2xl' : 'text-xl'}`}>
+                      📝 Core Claims
+                    </h4>
+                    <div className="space-y-4">
+                      <div className={`bg-purple-900/30 rounded-xl border-l-4 border-purple-500 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                        <p className={`text-purple-300 font-bold mb-2 ${isPresentation ? 'text-lg' : 'text-base'}`}>⏰ Critical Period</p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          Up to ~30 months for continuous emotional care
+                        </p>
+                      </div>
+                      <div className={`bg-red-900/30 rounded-xl border-l-4 border-red-500 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                        <p className={`text-red-300 font-bold mb-2 ${isPresentation ? 'text-lg' : 'text-base'}`}>🚨 Potential Outcomes</p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          Prolonged separation → low IQ, affectionless psychopathy
+                        </p>
+                      </div>
+                      <div className={`bg-blue-900/30 rounded-xl border-l-4 border-blue-500 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                        <p className={`text-blue-300 font-bold mb-2 ${isPresentation ? 'text-lg' : 'text-base'}`}>🧠 Internal Working Model</p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          Mental template disrupted by prolonged loss of primary attachment figure
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Evidence Cards */}
+                  <div className="space-y-4">
+                    <div className={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-t-4 border-amber-500 shadow-2xl overflow-hidden ${isPresentation ? 'p-6' : 'p-5'}`}>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-12 h-12 rounded-full bg-amber-900/50 flex items-center justify-center">
+                          <span className="text-2xl">👮</span>
+                        </div>
+                        <div>
+                          <h5 className={`font-bold text-amber-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>44 Thieves Study</h5>
+                          <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Bowlby (1944)</p>
+                        </div>
+                      </div>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        Affectionless thieves often had <strong className="text-amber-400">prolonged early separations</strong> from primary caregiver
+                      </p>
+                    </div>
+
+                    <div className={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-t-4 border-blue-500 shadow-2xl overflow-hidden ${isPresentation ? 'p-6' : 'p-5'}`}>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-12 h-12 rounded-full bg-blue-900/50 flex items-center justify-center">
+                          <span className="text-2xl">🏛️</span>
+                        </div>
+                        <div>
+                          <h5 className={`font-bold text-blue-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Goldfarb Study</h5>
+                          <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Orphanage vs Foster Care (1943)</p>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3 mb-3">
+                        <div className="bg-blue-900/30 rounded-lg p-3 text-center">
+                          <p className={`text-blue-400 font-black ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>68</p>
+                          <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Orphanage IQ</p>
+                        </div>
+                        <div className="bg-green-900/30 rounded-lg p-3 text-center">
+                          <p className={`text-green-400 font-black ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>96</p>
+                          <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Fostered IQ</p>
+                        </div>
+                      </div>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        Institutional care linked to <strong className="text-blue-400">significant IQ deficit</strong>
+                      </p>
+                    </div>
+
+                    <div className={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-t-4 border-green-500 shadow-2xl overflow-hidden ${isPresentation ? 'p-6' : 'p-5'}`}>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-12 h-12 rounded-full bg-green-900/50 flex items-center justify-center">
+                          <span className="text-2xl">👶</span>
+                        </div>
+                        <div>
+                          <h5 className={`font-bold text-green-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Czech Twins</h5>
+                          <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Counter-evidence</p>
+                        </div>
+                      </div>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        Severe early privation but <strong className="text-green-400">full recovery</strong> with quality care → suggests <strong className="text-green-400">sensitive period</strong> not absolute critical period
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Slide>
@@ -3094,34 +3400,130 @@ export default function App() {
             <Slide isPresentation={isPresentation}>
               <PhaseHeader
                 phase="Phase 3: Evaluation"
-                title="Evaluating Deprivation"
+                title="Evaluating the Maternal Deprivation Hypothesis"
                 icon={Brain}
                 time="6 MINS"
                 isPresentation={isPresentation}
               />
-              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-red-500 shadow-xl p-5">
-                  <h4 className="text-red-300 font-bold mb-2">Flawed Evidence</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Bowlby assessed and interviewed → researcher bias risk</li>
-                    <li>• Goldfarb confounds: trauma + institutional care</li>
-                    <li>• Lewis replication (500 cases) found no link to psychopathy</li>
-                  </ul>
+              <div className={`h-full flex flex-col ${isPresentation ? 'p-6' : 'p-4'}`}>
+                {/* Evaluation Header */}
+                <div className={`bg-gradient-to-r from-purple-900/40 to-pink-900/20 rounded-2xl border-2 border-purple-500/50 mb-6 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                  <h3 className={`font-bold text-purple-200 text-center ${isPresentation ? 'text-2xl' : 'text-xl'}`}>
+                    ⚖️ Critical Analysis: Is Bowlby's Hypothesis Valid?
+                  </h3>
                 </div>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-blue-500 shadow-xl p-5">
-                  <h4 className="text-blue-300 font-bold mb-2">Deprivation vs Privation</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Rutter: deprivation = loss after bond; privation = no bond formed</li>
-                    <li>• Severe outcomes often from privation (institutionalisation)</li>
-                  </ul>
-                </div>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
-                  <h4 className="text-green-300 font-bold mb-2">Critical vs Sensitive</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Czech twins recovered with quality care → not inevitable damage</li>
-                    <li>• Animal evidence (Levy rat study) suggests social impact of short separations</li>
-                    <li>• Sensitive period framing fits data better</li>
-                  </ul>
+
+                {/* Three-Column Critique Cards */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-grow">
+                  {/* Flawed Evidence */}
+                  <div className={`bg-gradient-to-br from-red-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-red-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-12 h-12 rounded-full bg-red-900/50 flex items-center justify-center">
+                        <span className="text-2xl">❌</span>
+                      </div>
+                      <h4 className={`font-bold text-red-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Flawed Evidence</h4>
+                    </div>
+                    
+                    <div className="space-y-3 flex-grow">
+                      <div className={`bg-red-900/20 border-l-4 border-red-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-red-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>🔬 Researcher Bias</p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Bowlby <strong className="text-red-400">both assessed and interviewed</strong> the 44 thieves → high risk of confirmation bias
+                        </p>
+                      </div>
+
+                      <div className={`bg-red-900/20 border-l-4 border-red-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-red-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>🔀 Confounds</p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Goldfarb: <strong className="text-red-400">trauma + poor institutional care</strong> confounded — can't isolate deprivation as cause
+                        </p>
+                      </div>
+
+                      <div className={`bg-red-900/20 border-l-4 border-red-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-red-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>🔁 Failed Replication</p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Lewis (500 cases) <strong className="text-red-400">found no link</strong> to affectionless psychopathy
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Deprivation vs Privation */}
+                  <div className={`bg-gradient-to-br from-blue-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-blue-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-12 h-12 rounded-full bg-blue-900/50 flex items-center justify-center">
+                        <span className="text-2xl">🔄</span>
+                      </div>
+                      <h4 className={`font-bold text-blue-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Conceptual Clarity</h4>
+                    </div>
+
+                    <div className={`bg-blue-900/30 rounded-xl border border-blue-500/40 mb-3 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <p className={`text-blue-300 font-bold mb-2 ${isPresentation ? 'text-lg' : 'text-base'}`}>🧩 Rutter's Distinction</p>
+                      <div className="space-y-3">
+                        <div className={`bg-gray-900/50 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                          <p className={`text-cyan-400 font-semibold ${isPresentation ? 'text-base' : 'text-sm'}`}>Deprivation</p>
+                          <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Loss <strong>after</strong> bond formed</p>
+                        </div>
+                        <div className="text-center text-gray-500">≠</div>
+                        <div className={`bg-gray-900/50 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                          <p className={`text-purple-400 font-semibold ${isPresentation ? 'text-base' : 'text-sm'}`}>Privation</p>
+                          <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}><strong>No</strong> attachment formed</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`bg-gradient-to-r from-blue-900/30 to-blue-800/10 border-l-4 border-blue-500 rounded-r-xl flex-grow ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                        Severe outcomes often reflect <strong className="text-blue-400">privation</strong> (institutionalization) not deprivation → Bowlby <strong className="text-blue-400">overstated</strong> deprivation effects
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Critical vs Sensitive Period */}
+                  <div className={`bg-gradient-to-br from-green-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-green-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-12 h-12 rounded-full bg-green-900/50 flex items-center justify-center">
+                        <span className="text-2xl">🕐</span>
+                      </div>
+                      <h4 className={`font-bold text-green-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Period Type Debate</h4>
+                    </div>
+
+                    <div className="space-y-3 flex-grow">
+                      <div className={`bg-amber-900/30 rounded-xl border border-amber-500/40 ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-amber-300 font-bold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>⏰ Critical Period</p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Bowlby's claim: <strong className="text-amber-400">absolute window</strong> — damage after ~30m is irreversible
+                        </p>
+                      </div>
+
+                      <div className="text-center">
+                        <div className="inline-block bg-gray-700 rounded-full px-4 py-1">
+                          <span className={`text-gray-400 font-bold ${isPresentation ? 'text-base' : 'text-sm'}`}>vs.</span>
+                        </div>
+                      </div>
+
+                      <div className={`bg-green-900/30 rounded-xl border border-green-500/40 ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-green-300 font-bold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>🌱 Sensitive Period</p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Evidence suggests: <strong className="text-green-400">optimal window</strong> — recovery possible with quality later care
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className={`mt-4 bg-gradient-to-r from-green-900/30 to-green-800/10 border-l-4 border-green-500 rounded-r-xl ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-green-300 font-semibold mb-1 ${isPresentation ? 'text-sm' : 'text-xs'}`}>✅ Czech Twins Evidence</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                        Recovered with quality care → supports <strong className="text-green-400">sensitive</strong> not critical period
+                      </p>
+                    </div>
+
+                    <div className={`mt-3 bg-blue-900/20 rounded-lg ${isPresentation ? 'p-3' : 'p-2'}`}>
+                      <p className={`text-blue-300 font-semibold mb-1 ${isPresentation ? 'text-xs' : 'text-[10px]'}`}>🐀 Levy Rat Study</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-xs' : 'text-[10px]'}`}>
+                        Animal evidence: short separations have <strong className="text-blue-400">social impacts</strong>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Slide>
@@ -3253,26 +3655,23 @@ export default function App() {
           return (
             <Slide isPresentation={isPresentation}>
               <div className="flex flex-col items-center justify-center h-full text-center">
-                <div className="relative mb-8">
-                  <div className="absolute inset-0 bg-slate-400 blur-[110px] opacity-20 rounded-full animate-pulse-slate"></div>
-                  <div className="relative z-10 flex gap-4 items-center">
-                    <Home size={isPresentation ? 96 : 78} className="text-slate-200" />
-                    <Heart size={isPresentation ? 90 : 72} className="text-rose-200 animate-heartbeat" />
-                  </div>
+                <div className="flex items-center gap-4 mb-6 relative">
+                  <div className="absolute inset-0 bg-slate-400 blur-[100px] opacity-20 rounded-full"></div>
+                  <Home size={isPresentation ? 64 : 48} className="text-slate-200 relative z-10" />
+                  <Heart size={isPresentation ? 64 : 48} className="text-slate-300 relative z-10" />
                 </div>
-                <h1 className={`font-bold text-white mb-4 tracking-tight ${isPresentation ? 'text-6xl' : 'text-4xl'}`}>
-                  Romanian Orphan Studies <span className="text-slate-200">& Later Relationships</span>
+                <h1 className={`font-black mb-4 bg-gradient-to-r from-slate-300 via-slate-200 to-blue-300 bg-clip-text text-transparent ${isPresentation ? 'text-7xl' : 'text-5xl'}`}>
+                  Romanian Orphan Studies & Later Relationships
                 </h1>
-                <h2 className="text-slate-300 text-sm tracking-[0.4em] uppercase mb-10 font-bold">
-                  Attachment Lesson 08
-                </h2>
-                <button
-                  onClick={nextSlide}
-                  className={`group relative bg-slate-900 border-2 border-slate-400 text-slate-100 font-bold px-12 py-4 rounded-xl hover:bg-gray-800 transition-all ${isPresentation ? 'text-2xl' : 'text-lg'} shadow-lg shadow-slate-400/20 hover:shadow-slate-300/40`}
-                >
-                  <span className="relative z-10">Start Lesson</span>
-                  <div className="absolute inset-0 bg-slate-300/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </button>
+                <div className={`h-1 w-64 bg-slate-500 mb-4`}></div>
+                <p className={`text-slate-400 max-w-2xl mb-8 tracking-widest uppercase font-bold ${isPresentation ? 'text-xl' : 'text-sm'}`}>
+                  Rutter & Deprivation vs Privation
+                </p>
+                <div className={`flex flex-wrap justify-center gap-3 ${isPresentation ? 'text-lg' : 'text-sm'}`}>
+                  <span className="bg-slate-900/30 text-slate-300 px-4 py-2 rounded-full border border-slate-500/30">Profound Deprivation</span>
+                  <span className="bg-slate-900/30 text-slate-300 px-4 py-2 rounded-full border border-slate-500/30">Sensitive vs Critical Periods</span>
+                  <span className="bg-slate-900/30 text-slate-300 px-4 py-2 rounded-full border border-slate-500/30">Recovery & Resilience</span>
+                </div>
               </div>
             </Slide>
           );
@@ -3335,35 +3734,143 @@ export default function App() {
             <Slide isPresentation={isPresentation}>
               <PhaseHeader
                 phase="Phase 2: Concept"
-                title="Rutter ERA Study"
+                title="English & Romanian Adoptees (ERA) Study"
                 icon={Shield}
                 time="7 MINS"
                 isPresentation={isPresentation}
               />
-              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
-                <div className="bg-gray-800 rounded-xl border border-slate-400/40 shadow-lg p-5">
-                  <h4 className="text-slate-200 font-bold mb-2">Sample & Groups</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Romanian adoptees assessed at 4, 6, 11, 15</li>
-                    <li>• Adopted &lt;6m, 6-24m, &gt;24m</li>
-                    <li>• Compared with UK adoptee controls</li>
-                  </ul>
+              <div className={`h-full flex flex-col ${isPresentation ? 'p-6' : 'p-4'}`}>
+                {/* Study Header */}
+                <div className={`bg-gradient-to-r from-slate-900/60 to-slate-800/30 rounded-2xl border-2 border-slate-400/50 mb-6 ${isPresentation ? 'p-6' : 'p-5'}`}>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 bg-slate-900/60 rounded-xl">
+                        <Shield size={isPresentation ? 32 : 24} className="text-slate-200" />
+                      </div>
+                      <div>
+                        <h3 className={`font-black text-slate-100 ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>Rutter et al.</h3>
+                        <p className={`text-slate-400 ${isPresentation ? 'text-lg' : 'text-base'}`}>Longitudinal Natural Experiment</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className={`text-slate-300 font-bold ${isPresentation ? 'text-xl' : 'text-lg'}`}>Assessment Points</p>
+                      <p className={`text-slate-400 ${isPresentation ? 'text-base' : 'text-sm'}`}>Ages: 4, 6, 11, 15</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-gray-800 rounded-xl border border-green-400/40 shadow-lg p-5">
-                  <h4 className="text-green-300 font-bold mb-2">Findings</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• IQ at 11: &lt;6m ≈102, 6-24m ≈86, &gt;24m ≈77</li>
-                    <li>• Disinhibited attachment common when adopted after 6m</li>
-                    <li>• Some catch-up, but age mattered</li>
-                  </ul>
+
+                {/* Adoption Timeline & Outcomes */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-grow">
+                  {/* Group 1: Early Adoption */}
+                  <div className={`bg-gradient-to-br from-green-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-green-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-16 h-16 rounded-full bg-green-900/50 flex items-center justify-center border-2 border-green-500/50">
+                        <span className={`text-white font-black ${isPresentation ? 'text-2xl' : 'text-xl'}`}>&lt;6m</span>
+                      </div>
+                      <div>
+                        <h4 className={`font-bold text-green-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Early Adoption</h4>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Before 6 months</p>
+                      </div>
+                    </div>
+
+                    {/* IQ Outcome */}
+                    <div className={`bg-gray-900/60 rounded-xl border border-green-500/30 mb-4 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <p className={`text-green-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>📊 IQ at Age 11</p>
+                      <div className="flex items-baseline gap-2">
+                        <p className={`text-green-400 font-black ${isPresentation ? 'text-6xl' : 'text-5xl'}`}>102</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-lg' : 'text-base'}`}>Normal range</p>
+                      </div>
+                      <div className="mt-3 w-full bg-gray-700 rounded-full h-3">
+                        <div className="bg-green-500 h-3 rounded-full" style={{width: '102%'}}></div>
+                      </div>
+                    </div>
+
+                    {/* Attachment Outcome */}
+                    <div className={`bg-gradient-to-r from-green-900/30 to-green-800/10 border-l-4 border-green-500 rounded-r-xl flex-grow ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-green-300 font-bold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>✅ Attachment Quality</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        <strong className="text-green-400">Rare</strong> disinhibited attachment — near-normal development
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Group 2: Mid Adoption */}
+                  <div className={`bg-gradient-to-br from-amber-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-amber-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-16 h-16 rounded-full bg-amber-900/50 flex items-center justify-center border-2 border-amber-500/50">
+                        <span className={`text-white font-black ${isPresentation ? 'text-xl' : 'text-lg'}`}>6-24m</span>
+                      </div>
+                      <div>
+                        <h4 className={`font-bold text-amber-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Mid Adoption</h4>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>6 to 24 months</p>
+                      </div>
+                    </div>
+
+                    {/* IQ Outcome */}
+                    <div className={`bg-gray-900/60 rounded-xl border border-amber-500/30 mb-4 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <p className={`text-amber-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>📊 IQ at Age 11</p>
+                      <div className="flex items-baseline gap-2">
+                        <p className={`text-amber-400 font-black ${isPresentation ? 'text-6xl' : 'text-5xl'}`}>86</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-lg' : 'text-base'}`}>Moderate lag</p>
+                      </div>
+                      <div className="mt-3 w-full bg-gray-700 rounded-full h-3">
+                        <div className="bg-amber-500 h-3 rounded-full" style={{width: '86%'}}></div>
+                      </div>
+                    </div>
+
+                    {/* Attachment Outcome */}
+                    <div className={`bg-gradient-to-r from-amber-900/30 to-amber-800/10 border-l-4 border-amber-500 rounded-r-xl flex-grow ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-amber-300 font-bold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>⚠️ Attachment Quality</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        <strong className="text-amber-400">Some</strong> disinhibited attachment — higher risk than early group
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Group 3: Late Adoption */}
+                  <div className={`bg-gradient-to-br from-red-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-red-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-16 h-16 rounded-full bg-red-900/50 flex items-center justify-center border-2 border-red-500/50">
+                        <span className={`text-white font-black ${isPresentation ? 'text-xl' : 'text-lg'}`}>&gt;24m</span>
+                      </div>
+                      <div>
+                        <h4 className={`font-bold text-red-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Late Adoption</h4>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>After 24 months</p>
+                      </div>
+                    </div>
+
+                    {/* IQ Outcome */}
+                    <div className={`bg-gray-900/60 rounded-xl border border-red-500/30 mb-4 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <p className={`text-red-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>📊 IQ at Age 11</p>
+                      <div className="flex items-baseline gap-2">
+                        <p className={`text-red-400 font-black ${isPresentation ? 'text-6xl' : 'text-5xl'}`}>77</p>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-lg' : 'text-base'}`}>Lower range</p>
+                      </div>
+                      <div className="mt-3 w-full bg-gray-700 rounded-full h-3">
+                        <div className="bg-red-500 h-3 rounded-full" style={{width: '77%'}}></div>
+                      </div>
+                    </div>
+
+                    {/* Attachment Outcome */}
+                    <div className={`bg-gradient-to-r from-red-900/30 to-red-800/10 border-l-4 border-red-500 rounded-r-xl flex-grow ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-red-300 font-bold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>❌ Attachment Quality</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        <strong className="text-red-400">Pronounced</strong> disinhibited attachment — significant challenges
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-gray-800 rounded-xl border border-blue-400/40 shadow-lg p-5">
-                  <h4 className="text-blue-300 font-bold mb-2">Meaning</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Supports sensitive period but recovery possible</li>
-                    <li>• Highlights disinhibited attachment as institution effect</li>
-                    <li>• Natural experiment with practical implications</li>
-                  </ul>
+
+                {/* Key Conclusion Banner */}
+                <div className={`mt-6 bg-gradient-to-r from-blue-900/40 to-cyan-900/20 border-2 border-blue-500/50 rounded-2xl ${isPresentation ? 'p-5' : 'p-4'}`}>
+                  <h4 className={`font-bold text-blue-300 mb-2 flex items-center gap-2 ${isPresentation ? 'text-xl' : 'text-lg'}`}>
+                    💡 Critical Insights
+                  </h4>
+                  <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                    <p className="text-gray-300"><span className="text-blue-400 font-bold">•</span> <strong className="text-blue-300">Timing matters:</strong> Earlier adoption = better outcomes</p>
+                    <p className="text-gray-300"><span className="text-cyan-400 font-bold">•</span> <strong className="text-cyan-300">Recovery possible:</strong> Some catch-up even in late group</p>
+                    <p className="text-gray-300"><span className="text-teal-400 font-bold">•</span> <strong className="text-teal-300">Sensitive period:</strong> Not absolute — plasticity exists</p>
+                  </div>
                 </div>
               </div>
             </Slide>
@@ -3374,26 +3881,128 @@ export default function App() {
             <Slide isPresentation={isPresentation}>
               <PhaseHeader
                 phase="Phase 2: Concept"
-                title="Zeanah et al. (BEI-style)"
+                title="Bucharest Early Intervention (BEI) Project"
                 icon={AlertTriangle}
                 time="6 MINS"
                 isPresentation={isPresentation}
               />
-              <div className={`grid grid-cols-1 lg:grid-cols-2 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-slate-400 shadow-xl p-5">
-                  <h4 className="text-slate-200 font-bold mb-2">Procedure</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• 95 institutionalised children (12-31 months) vs 50 controls</li>
-                    <li>• Attachment assessed (Strange Situation style) + carers reported disinhibited behaviours</li>
-                  </ul>
+              <div className={`h-full flex flex-col ${isPresentation ? 'p-6' : 'p-4'}`}>
+                {/* Study Header */}
+                <div className={`bg-gradient-to-r from-slate-900/60 to-blue-900/30 rounded-2xl border-2 border-slate-400/50 mb-6 ${isPresentation ? 'p-6' : 'p-5'}`}>
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-slate-900/60 rounded-xl">
+                      <AlertTriangle size={isPresentation ? 32 : 24} className="text-slate-200" />
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className={`font-black text-slate-100 ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>Zeanah et al.</h3>
+                      <p className={`text-slate-400 ${isPresentation ? 'text-lg' : 'text-base'}`}>Institutional vs Family-Reared Children</p>
+                    </div>
+                    <div className="text-right">
+                      <p className={`text-slate-300 font-bold ${isPresentation ? 'text-2xl' : 'text-xl'}`}>145</p>
+                      <p className={`text-slate-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>Total Children</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
-                  <h4 className="text-green-300 font-bold mb-2">Findings</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• 65% disorganised; 19% secure vs 74% secure controls</li>
-                    <li>• High disinhibited attachment in institutional group</li>
-                  </ul>
-                  <p className="text-gray-300 text-sm mt-2">Supports institution-specific effects on attachment quality.</p>
+
+                {/* Comparison Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
+                  {/* Institutional Group */}
+                  <div className={`bg-gradient-to-br from-red-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-red-500/50 shadow-2xl overflow-hidden ${isPresentation ? 'p-8' : 'p-6'}`}>
+                    <div className="flex items-center gap-3 mb-6 border-b border-gray-700 pb-4">
+                      <div className="w-16 h-16 rounded-full bg-red-900/50 flex items-center justify-center border-2 border-red-500/50">
+                        <span className="text-3xl">🏛️</span>
+                      </div>
+                      <div>
+                        <h4 className={`font-bold text-red-300 ${isPresentation ? 'text-2xl' : 'text-xl'}`}>Institutional Care</h4>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-base' : 'text-sm'}`}>n = 95 (ages 12-31 months)</p>
+                      </div>
+                    </div>
+
+                    {/* Attachment Distribution Pie */}
+                    <div className={`bg-gray-900/60 rounded-xl border border-red-500/30 mb-6 ${isPresentation ? 'p-6' : 'p-5'}`}>
+                      <p className={`text-red-300 font-bold mb-4 ${isPresentation ? 'text-xl' : 'text-lg'}`}>🔴 Attachment Distribution</p>
+                      
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Secure</span>
+                          <span className={`text-green-400 font-bold ${isPresentation ? 'text-2xl' : 'text-xl'}`}>19%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-4">
+                          <div className="bg-green-500 h-4 rounded-full" style={{width: '19%'}}></div>
+                        </div>
+
+                        <div className="flex items-center justify-between mt-4">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Disorganised</span>
+                          <span className={`text-red-400 font-bold ${isPresentation ? 'text-2xl' : 'text-xl'}`}>65%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-4">
+                          <div className="bg-red-500 h-4 rounded-full" style={{width: '65%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`bg-gradient-to-r from-red-900/30 to-red-800/10 border-l-4 border-red-500 rounded-r-xl ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <p className={`text-red-300 font-bold mb-2 ${isPresentation ? 'text-lg' : 'text-base'}`}>⚠️ Disinhibited Attachment</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        <strong className="text-red-400">High prevalence</strong> of indiscriminate friendliness and attention-seeking with strangers
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Control Group */}
+                  <div className={`bg-gradient-to-br from-green-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-green-500/50 shadow-2xl overflow-hidden ${isPresentation ? 'p-8' : 'p-6'}`}>
+                    <div className="flex items-center gap-3 mb-6 border-b border-gray-700 pb-4">
+                      <div className="w-16 h-16 rounded-full bg-green-900/50 flex items-center justify-center border-2 border-green-500/50">
+                        <span className="text-3xl">🏠</span>
+                      </div>
+                      <div>
+                        <h4 className={`font-bold text-green-300 ${isPresentation ? 'text-2xl' : 'text-xl'}`}>Family-Reared</h4>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-base' : 'text-sm'}`}>n = 50 (controls)</p>
+                      </div>
+                    </div>
+
+                    {/* Attachment Distribution Pie */}
+                    <div className={`bg-gray-900/60 rounded-xl border border-green-500/30 mb-6 ${isPresentation ? 'p-6' : 'p-5'}`}>
+                      <p className={`text-green-300 font-bold mb-4 ${isPresentation ? 'text-xl' : 'text-lg'}`}>🟢 Attachment Distribution</p>
+                      
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Secure</span>
+                          <span className={`text-green-400 font-bold ${isPresentation ? 'text-2xl' : 'text-xl'}`}>74%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-4">
+                          <div className="bg-green-500 h-4 rounded-full" style={{width: '74%'}}></div>
+                        </div>
+
+                        <div className="flex items-center justify-between mt-4">
+                          <span className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>Disorganised</span>
+                          <span className={`text-amber-400 font-bold ${isPresentation ? 'text-2xl' : 'text-xl'}`}>22%</span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-4">
+                          <div className="bg-amber-500 h-4 rounded-full" style={{width: '22%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`bg-gradient-to-r from-green-900/30 to-green-800/10 border-l-4 border-green-500 rounded-r-xl ${isPresentation ? 'p-5' : 'p-4'}`}>
+                      <p className={`text-green-300 font-bold mb-2 ${isPresentation ? 'text-lg' : 'text-base'}`}>✅ Typical Development</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        <strong className="text-green-400">Normal range</strong> of attachment classifications with secure as modal type
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Key Interpretation */}
+                <div className={`mt-6 bg-gradient-to-r from-blue-900/40 to-purple-900/20 border-2 border-blue-500/50 rounded-2xl ${isPresentation ? 'p-6' : 'p-5'}`}>
+                  <h4 className={`font-bold text-blue-300 mb-3 flex items-center gap-2 ${isPresentation ? 'text-xl' : 'text-lg'}`}>
+                    🔍 Interpretation
+                  </h4>
+                  <p className={`text-gray-300 ${isPresentation ? 'text-lg' : 'text-base'}`}>
+                    Findings demonstrate <strong className="text-blue-400">institution-specific effects</strong> on attachment quality. 
+                    The high rate of disorganized attachment (65% vs 22%) and disinhibited attachment in the institutional group 
+                    supports the role of <strong className="text-purple-400">early caregiving quality</strong> in attachment development.
+                  </p>
                 </div>
               </div>
             </Slide>
@@ -3404,32 +4013,137 @@ export default function App() {
             <Slide isPresentation={isPresentation}>
               <PhaseHeader
                 phase="Phase 3: Evaluation"
-                title="Evaluating Institutionalisation"
+                title="Evaluating Institutionalization Research"
                 icon={Brain}
                 time="6 MINS"
                 isPresentation={isPresentation}
               />
-              <div className={`grid grid-cols-1 lg:grid-cols-3 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
-                  <h4 className="text-green-300 font-bold mb-2">Strengths</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Real-world impact: key worker model, avoidance of large rotating staff</li>
-                    <li>• Natural experiment with clear timing of adoption</li>
-                  </ul>
+              <div className={`h-full flex flex-col ${isPresentation ? 'p-6' : 'p-4'}`}>
+                {/* Evaluation Header */}
+                <div className={`bg-gradient-to-r from-slate-900/50 to-blue-900/20 rounded-2xl border-2 border-slate-400/50 mb-6 ${isPresentation ? 'p-5' : 'p-4'}`}>
+                  <h3 className={`font-bold text-slate-100 text-center ${isPresentation ? 'text-2xl' : 'text-xl'}`}>
+                    ⚖️ Critical Appraisal: ERA & BEI Studies
+                  </h3>
                 </div>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-red-500 shadow-xl p-5">
-                  <h4 className="text-red-300 font-bold mb-2">Limitations</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Romanian context extreme; limits generalisation</li>
-                    <li>• Possible confounds (nutrition, medical care) & attrition</li>
-                  </ul>
-                </div>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-blue-500 shadow-xl p-5">
-                  <h4 className="text-blue-300 font-bold mb-2">Interpretation</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Sensitive period rather than absolute critical period</li>
-                    <li>• Outcomes probabilistic, not deterministic</li>
-                  </ul>
+
+                {/* Strengths, Limitations, Interpretation Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-grow">
+                  {/* Strengths */}
+                  <div className={`bg-gradient-to-br from-green-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-green-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-12 h-12 rounded-full bg-green-900/50 flex items-center justify-center">
+                        <span className="text-2xl">✅</span>
+                      </div>
+                      <h4 className={`font-bold text-green-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Strengths</h4>
+                    </div>
+                    
+                    <div className="space-y-4 flex-grow">
+                      <div className={`bg-green-900/20 border-l-4 border-green-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-green-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>🌍</span> Real-World Impact
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Findings led to <strong className="text-green-400">policy reforms</strong>: key worker model, avoidance of large rotating staff in care institutions
+                        </p>
+                      </div>
+
+                      <div className={`bg-green-900/20 border-l-4 border-green-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-green-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>🧪</span> Natural Experiment
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Clear timing of adoption groups allows causal inferences about <strong className="text-green-400">sensitive periods</strong>
+                        </p>
+                      </div>
+
+                      <div className={`bg-green-900/20 border-l-4 border-green-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-green-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>📈</span> Longitudinal Design
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Multiple assessment points (4, 6, 11, 15 years) track <strong className="text-green-400">developmental trajectories</strong>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Limitations */}
+                  <div className={`bg-gradient-to-br from-red-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-red-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-12 h-12 rounded-full bg-red-900/50 flex items-center justify-center">
+                        <span className="text-2xl">⚠️</span>
+                      </div>
+                      <h4 className={`font-bold text-red-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Limitations</h4>
+                    </div>
+
+                    <div className="space-y-4 flex-grow">
+                      <div className={`bg-red-900/20 border-l-4 border-red-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-red-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>🌎</span> Cultural Limits
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Romanian context was <strong className="text-red-400">extreme</strong> (severe deprivation + malnutrition) — limits generalization to other care settings
+                        </p>
+                      </div>
+
+                      <div className={`bg-red-900/20 border-l-4 border-red-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-red-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>🔀</span> Confounds
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Cannot isolate attachment effects from <strong className="text-red-400">nutrition, medical care</strong>, and other deprivation factors
+                        </p>
+                      </div>
+
+                      <div className={`bg-red-900/20 border-l-4 border-red-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-red-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>📉</span> Attrition
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Longitudinal studies face <strong className="text-red-400">participant dropout</strong> — may bias results toward more stable adoptive families
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Interpretation */}
+                  <div className={`bg-gradient-to-br from-blue-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-blue-500/50 shadow-2xl overflow-hidden flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-12 h-12 rounded-full bg-blue-900/50 flex items-center justify-center">
+                        <span className="text-2xl">🧠</span>
+                      </div>
+                      <h4 className={`font-bold text-blue-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Interpretation</h4>
+                    </div>
+
+                    <div className="space-y-4 flex-grow">
+                      <div className={`bg-blue-900/20 border-l-4 border-blue-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-blue-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>⏳</span> Sensitive Period
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Evidence supports <strong className="text-blue-400">sensitive period</strong> (not absolute critical period) — recovery possible but <strong className="text-blue-400">timing matters</strong>
+                        </p>
+                      </div>
+
+                      <div className={`bg-purple-900/20 border-l-4 border-purple-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-purple-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>🎲</span> Probabilistic View
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Outcomes are <strong className="text-purple-400">probabilistic, not deterministic</strong> — early risk doesn't guarantee poor outcomes
+                        </p>
+                      </div>
+
+                      <div className={`bg-teal-900/20 border-l-4 border-teal-500 rounded-r-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <p className={`text-teal-300 font-semibold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                          <span>💚</span> Later Care Quality
+                        </p>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          High-quality adoptive care can promote <strong className="text-teal-400">significant recovery</strong> even after severe early privation
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Slide>
@@ -3439,30 +4153,172 @@ export default function App() {
           return (
             <Slide isPresentation={isPresentation}>
               <PhaseHeader
-                phase="Phase 3: Concept"
-                title="Later Relationships & IWM"
+                phase="Phase 4: Application"
+                title="Internal Working Models & Later Relationships"
                 icon={Heart}
-                time="7 MINS"
+                time="8 MINS"
                 isPresentation={isPresentation}
               />
-              <div className={`grid grid-cols-1 lg:grid-cols-2 h-full ${isPresentation ? 'gap-8 p-8' : 'gap-5 p-5'}`}>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-slate-400 shadow-xl p-5">
-                  <h4 className="text-slate-200 font-bold mb-2">Internal Working Model</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• Mental template for self, others, relationships</li>
-                    <li>• Guides expectations in peer, romantic, and parenting contexts</li>
-                  </ul>
-                  <div className="bg-gray-900/50 border border-slate-400/40 rounded-lg p-4 text-sm text-slate-100 mt-3">
-                    Hazan & Shaver love quiz: 56% secure, 25% avoidant, 19% resistant. Secure → longer, trusting romance; avoidant → fear intimacy.
+              <div className={`h-full flex flex-col ${isPresentation ? 'p-6' : 'p-4'}`}>
+                {/* IWM Concept Header */}
+                <div className={`bg-gradient-to-r from-slate-900/60 to-pink-900/30 rounded-2xl border-2 border-pink-500/50 mb-6 ${isPresentation ? 'p-6' : 'p-5'}`}>
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-pink-900/50 rounded-xl">
+                      <Heart size={isPresentation ? 32 : 24} className="text-pink-300" />
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className={`font-black text-pink-100 ${isPresentation ? 'text-3xl' : 'text-2xl'}`}>Internal Working Model (IWM)</h3>
+                      <p className={`text-pink-300 ${isPresentation ? 'text-lg' : 'text-base'}`}>Mental representation of self, others, and relationships formed through early attachment experiences</p>
+                    </div>
                   </div>
                 </div>
-                <div className="bg-gray-800 rounded-xl border-t-4 border-green-500 shadow-xl p-5">
-                  <h4 className="text-green-300 font-bold mb-2">Evidence & Nuance</h4>
-                  <ul className="text-gray-300 text-sm space-y-2">
-                    <li>• McCarthy: early secure → better friendships & romance</li>
-                    <li>• Regensburg study found no continuity → mixed evidence</li>
-                    <li>• Continuity is probabilistic; later care can shift trajectories</li>
-                  </ul>
+
+                {/* Relationship Continuity Pathway */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
+                  {/* Left: IWM Development Flow */}
+                  <div className={`bg-gradient-to-br from-blue-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-blue-500/50 shadow-2xl flex flex-col ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <h4 className={`font-bold text-blue-300 mb-4 flex items-center gap-2 ${isPresentation ? 'text-xl' : 'text-lg'}`}>
+                      <span>🧸</span> Continuity Hypothesis
+                    </h4>
+
+                    {/* Flow diagram */}
+                    <div className="space-y-4 flex-grow">
+                      {/* Stage 1: Early Attachment */}
+                      <div className={`bg-gradient-to-r from-cyan-900/30 to-blue-900/20 border-2 border-cyan-500/50 rounded-xl ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-10 h-10 rounded-full bg-cyan-500/30 flex items-center justify-center text-cyan-300 font-black">
+                            1
+                          </div>
+                          <p className={`font-bold text-cyan-300 ${isPresentation ? 'text-lg' : 'text-base'}`}>👶 Early Attachment</p>
+                        </div>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Caregiver responsiveness & availability during infancy
+                        </p>
+                      </div>
+
+                      {/* Arrow */}
+                      <div className="flex justify-center">
+                        <div className="text-blue-400 text-3xl font-black">↓</div>
+                      </div>
+
+                      {/* Stage 2: IWM Formation */}
+                      <div className={`bg-gradient-to-r from-purple-900/30 to-pink-900/20 border-2 border-purple-500/50 rounded-xl ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-10 h-10 rounded-full bg-purple-500/30 flex items-center justify-center text-purple-300 font-black">
+                            2
+                          </div>
+                          <p className={`font-bold text-purple-300 ${isPresentation ? 'text-lg' : 'text-base'}`}>🧠 IWM Formation</p>
+                        </div>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          Mental schema: "Am I worthy?" / "Are others trustworthy?"
+                        </p>
+                      </div>
+
+                      {/* Arrow */}
+                      <div className="flex justify-center">
+                        <div className="text-pink-400 text-3xl font-black">↓</div>
+                      </div>
+
+                      {/* Stage 3: Later Relationships */}
+                      <div className={`bg-gradient-to-r from-pink-900/30 to-red-900/20 border-2 border-pink-500/50 rounded-xl ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-10 h-10 rounded-full bg-pink-500/30 flex items-center justify-center text-pink-300 font-black">
+                            3
+                          </div>
+                          <p className={`font-bold text-pink-300 ${isPresentation ? 'text-lg' : 'text-base'}`}>💑 Later Relationships</p>
+                        </div>
+                        <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          IWM shapes expectations & behaviors in adult romantic relationships
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right: Hazan & Shaver Evidence */}
+                  <div className={`bg-gradient-to-br from-pink-900/40 via-gray-800 to-gray-900 rounded-2xl border-2 border-pink-500/50 shadow-2xl overflow-hidden ${isPresentation ? 'p-6' : 'p-5'}`}>
+                    <div className="flex items-center gap-3 mb-4 border-b border-gray-700 pb-3">
+                      <div className="w-12 h-12 rounded-full bg-pink-900/50 flex items-center justify-center">
+                        <span className="text-2xl">📈</span>
+                      </div>
+                      <div>
+                        <h4 className={`font-bold text-pink-300 ${isPresentation ? 'text-xl' : 'text-lg'}`}>Hazan & Shaver (1987)</h4>
+                        <p className={`text-gray-400 ${isPresentation ? 'text-sm' : 'text-xs'}`}>"Love Quiz" Study</p>
+                      </div>
+                    </div>
+
+                    {/* Love Types Distribution */}
+                    <div className="space-y-4">
+                      <div className={`bg-green-900/20 border-l-4 border-green-500 rounded-r-xl ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <div className="flex items-center justify-between mb-2">
+                          <p className={`text-green-300 font-bold ${isPresentation ? 'text-lg' : 'text-base'}`}>💚 Secure Love</p>
+                          <span className={`text-green-400 font-black ${isPresentation ? 'text-2xl' : 'text-xl'}`}>56%</span>
+                        </div>
+                        <p className={`text-gray-300 mb-2 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          "I find it easy to get close to others"
+                        </p>
+                        <div className="w-full bg-gray-700 rounded-full h-3">
+                          <div className="bg-green-500 h-3 rounded-full" style={{width: '56%'}}></div>
+                        </div>
+                      </div>
+
+                      <div className={`bg-amber-900/20 border-l-4 border-amber-500 rounded-r-xl ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <div className="flex items-center justify-between mb-2">
+                          <p className={`text-amber-300 font-bold ${isPresentation ? 'text-lg' : 'text-base'}`}>💛 Avoidant Love</p>
+                          <span className={`text-amber-400 font-black ${isPresentation ? 'text-2xl' : 'text-xl'}`}>25%</span>
+                        </div>
+                        <p className={`text-gray-300 mb-2 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          "I'm uncomfortable being close to others"
+                        </p>
+                        <div className="w-full bg-gray-700 rounded-full h-3">
+                          <div className="bg-amber-500 h-3 rounded-full" style={{width: '25%'}}></div>
+                        </div>
+                      </div>
+
+                      <div className={`bg-red-900/20 border-l-4 border-red-500 rounded-r-xl ${isPresentation ? 'p-4' : 'p-3'}`}>
+                        <div className="flex items-center justify-between mb-2">
+                          <p className={`text-red-300 font-bold ${isPresentation ? 'text-lg' : 'text-base'}`}>❤️ Anxious Love</p>
+                          <span className={`text-red-400 font-black ${isPresentation ? 'text-2xl' : 'text-xl'}`}>19%</span>
+                        </div>
+                        <p className={`text-gray-300 mb-2 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                          "I worry others don't really love me"
+                        </p>
+                        <div className="w-full bg-gray-700 rounded-full h-3">
+                          <div className="bg-red-500 h-3 rounded-full" style={{width: '19%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Key Finding */}
+                    <div className={`mt-4 bg-gradient-to-r from-blue-900/30 to-purple-900/20 border-2 border-blue-500/50 rounded-xl ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-blue-300 font-bold mb-2 flex items-center gap-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>
+                        🔗 Key Finding
+                      </p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>
+                        Distribution of adult love styles <strong className="text-blue-400">mirrors infant attachment types</strong>, supporting IWM continuity from early caregiving to adult romance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom: Mechanism Explanation */}
+                <div className={`mt-6 bg-gradient-to-r from-purple-900/40 to-pink-900/20 border-2 border-purple-500/50 rounded-2xl ${isPresentation ? 'p-6' : 'p-5'}`}>
+                  <h4 className={`font-bold text-purple-300 mb-3 flex items-center gap-2 ${isPresentation ? 'text-xl' : 'text-lg'}`}>
+                    ⚙️ Mechanism: How IWM Shapes Relationships
+                  </h4>
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div className={`bg-purple-900/20 rounded-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-purple-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>👁️ Perception Filter</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>IWM biases how we <strong>interpret</strong> partner's behaviors</p>
+                    </div>
+                    <div className={`bg-pink-900/20 rounded-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-pink-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>👣 Behavioral Script</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>IWM guides our <strong>reactions</strong> in intimacy & conflict</p>
+                    </div>
+                    <div className={`bg-blue-900/20 rounded-lg ${isPresentation ? 'p-4' : 'p-3'}`}>
+                      <p className={`text-blue-300 font-semibold mb-2 ${isPresentation ? 'text-base' : 'text-sm'}`}>🔄 Partner Selection</p>
+                      <p className={`text-gray-300 ${isPresentation ? 'text-sm' : 'text-xs'}`}>IWM influences who we <strong>choose</strong> as romantic partners</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Slide>
