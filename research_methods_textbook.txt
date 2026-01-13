@@ -1,4 +1,132 @@
-RESEARCH METHODS - AQA YEAR 1 PSYCHOLOGY TEXTBOOK
+RESEARCH METHODS - AQA PSYCHOLOGY (YEAR 12 VS YEAR 13)
+======================================================
+
+SOURCES USED (OFFLINE CROSS-REFERENCE)
+--------------------------------------
+- AQA A-level Psychology Specification (first teaching 2015, updates through 2024): research methods split across AS (Year 12) and A level (Year 13).
+- AQA Teacher Guide/Handbook excerpts (research methods chapters) available in the cloned Lesson-Builder materials.
+- AQA Year 1 textbook extract located at Textbooks/AQA Year 1 textbook work.txt (cloned into _external/Lesson-Builder-).
+
+OVERVIEW
+--------
+Research methods contribute ~25% of assessment; ≥10% of marks assess mathematical skills. Practical, ethical research activities are expected throughout both years.
+
+
+YEAR 12 (AS) CONTENT
+====================
+
+EXPERIMENTAL METHOD
+-------------------
+Key terms: experimental method, aim, hypothesis (directional vs non-directional). Variables: IV, DV, operationalisation.
+Writing hypotheses checklist: measurable IV/DV; state relationship; choose directional vs non-directional appropriately.
+
+RESEARCH ISSUES
+---------------
+Investigator effects, demand characteristics, extraneous vs confounding variables; need for control.
+
+EXPERIMENTAL DESIGNS
+--------------------
+Independent groups (random allocation), repeated measures (counterbalancing), matched pairs (matched participant variables).
+
+RESEARCH TECHNIQUES
+-------------------
+Pilot studies; single-blind; double-blind; randomisation; standardisation.
+
+TYPES OF EXPERIMENTS
+--------------------
+Laboratory, field, natural, quasi; evaluation focuses on internal vs external validity, control, ethics, cause-effect limits.
+
+CONTROL GROUPS AND CONDITIONS
+-----------------------------
+Use control conditions as baselines; compare IV levels.
+
+OBSERVATIONAL METHODS
+---------------------
+Naturalistic vs controlled; covert vs overt; participant vs non-participant. Trade-offs: validity, ethics, objectivity.
+
+OBSERVATIONAL DESIGN
+--------------------
+Structured vs unstructured; behavioural categories (observable, non-overlapping); sampling (continuous, event, time); observer bias risks.
+
+SELF-REPORT TECHNIQUES
+----------------------
+Questionnaires and interviews as methods to gather participants' own reports.
+
+QUESTIONNAIRES
+--------------
+Closed vs open questions; Likert/rating scales; design pitfalls (leading, double-barrelled, complex wording); pilot testing.
+
+INTERVIEWS
+----------
+Structured, semi-structured, unstructured; strengths/limitations around flexibility, replicability, depth.
+
+CORRELATIONS
+------------
+Association between co-variables; positive/negative/zero; differences from experiments; preliminary tool; cannot establish causation.
+
+TYPES OF DATA
+-------------
+Qualitative vs quantitative; primary vs secondary; strengths/limitations of each.
+
+ETHICAL ISSUES
+--------------
+Informed consent, deception, debriefing, right to withdraw, confidentiality, protection from harm, privacy.
+
+SCIENTIFIC PROCESS
+------------------
+Steps: question → aim → hypothesis → design → conduct (ethics, standardisation) → analyse (appropriate stats) → conclude (link to hypothesis, limitations, future work).
+
+VALIDITY
+--------
+Internal validity (IV causes DV; control of confounds); external validity (ecological, population, historical).
+
+RELIABILITY
+-----------
+Consistency of measurement; internal, external (test-retest), inter-rater reliability.
+
+
+YEAR 13 (A LEVEL) CONTENT
+=========================
+
+FEATURES OF SCIENCE
+-------------------
+Objective, controlled, repeatable, empirical, falsifiable; theory construction; hypothesis testing.
+
+MATHEMATICAL SKILLS (EXTENSION)
+-------------------------------
+Measures of central tendency and dispersion; percentages, ratios, fractions, probability; significance levels; statistical tests; graph interpretation; data presentation.
+
+LEVELS OF MEASUREMENT
+---------------------
+Nominal, ordinal, interval, ratio; implications for test choice.
+
+PROBABILITY AND SIGNIFICANCE
+----------------------------
+Role of probability in inference; typical alpha p ≤ 0.05 (sometimes p ≤ 0.01); interpreting significance.
+
+CHOOSING INFERENTIAL TESTS
+--------------------------
+Consider data type, design (independent/repeated/matched), and whether testing difference or correlation. Common tests: chi-square; Mann-Whitney U; Wilcoxon; Spearman's rho; Pearson's r.
+
+META-ANALYSIS
+-------------
+Combining findings across studies to estimate effect size; strengths (power, generalisability) and limits (publication bias, selective inclusion).
+
+REPORTING PSYCHOLOGICAL INVESTIGATIONS
+-------------------------------------
+Standard sections: abstract; introduction; method (design, participants, materials, procedure); results (descriptive + inferential, tables/graphs); discussion (findings, links to prior work, limitations, implications, future research); references.
+
+CONTENT ANALYSIS
+----------------
+Coding qualitative material into themes/categories; quantification of frequency; steps: question → sample → code → categorise → count → analyse.
+
+CASE STUDIES
+------------
+In-depth investigations (individual/group/event) using multiple methods, often longitudinal. Strengths: rich detail, rare phenomena, hypothesis generation. Limits: limited generalisability, researcher bias, time costs, memory issues.
+
+SUMMARY
+-------
+Year 12 secures core methods (experiments, observation, self-report, correlations), control/ethics, validity/reliability, and foundational data skills. Year 13 deepens scientific stance (features of science), statistical decision-making (levels of measurement, probability, inferential tests), and extended methods/reporting (meta-analysis, content analysis, case studies). Together they meet AQA’s research methods requirements.RESEARCH METHODS - AQA YEAR 1 PSYCHOLOGY TEXTBOOK
 =================================================
 
 OVERVIEW
